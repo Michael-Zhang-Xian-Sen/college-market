@@ -1,0 +1,97 @@
+*{
+    padding: 0;
+    border: 0;
+    margin: 0;
+}
+
+/* book居中 */
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../source/img/bg.jpg);
+}
+#book{
+    position: relative;
+    width: 80%;
+    height: 800px;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    background-color: beige;
+}
+
+/* header */
+header{
+    background-color: antiquewhite;
+    position: relative;
+    -webkit-border-radius: 20px 20px 0 0;
+    border-radius: 20px 20px 0 0;
+    height: 50px;
+}
+
+#logo{
+    position: absolute;
+    top:50%;
+    margin-top:-20px;
+    left: 30px;
+    width: 40px;
+    height: 40px;
+}
+
+#search{
+    position: absolute;
+    right: 40px;
+}
+
+/* content */
+#content{  
+    position: relative;
+    widows: 100%;
+    height: 750px;
+}
+
+#content aside{
+    position: relative;
+    display: inline-block;
+    height: 100%;
+    width:5%;   
+}
+
+article{
+    position: relative;
+    display: inline-block;
+    height: 100%;
+    width: 10%;
+}
+
+/* aside */
+aside{
+    position: relative;
+    text-align: center;
+    background-color: bisque;
+    border-radius:0 0 0 20px;
+}
+
+aside ul li{
+    position: relative;
+    list-style: none;
+    list-style-type: none;
+    margin-top:30px;
+}
+
+#index{
+    position: relative;
+    display: block;
+    padding-top: 10px;
+}
+
+#market-label{
+    padding-top: 40px;
+    display: block;
+}
+
+#school-label{
+    position: relative;
+    display: block;
+    margin-top: 100px;
+}
