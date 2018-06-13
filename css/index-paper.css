@@ -4,6 +4,10 @@
     margin: 0;
 }
 
+a{
+    
+}
+
 /* book居中 */
 body{
     display: flex;
@@ -11,6 +15,15 @@ body{
     align-items: center;
     background-image: url(../source/img/bg.jpg);
 }
+
+#wrapper{
+    position: relative;
+    height: 800px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 #book{
     position: relative;
     width: 80%;
@@ -72,11 +85,15 @@ aside{
     border-radius:0 0 0 20px;
 }
 
+aside ul{
+    margin-bottom: 0;
+}
+
 aside ul li{
     position: relative;
     list-style: none;
     list-style-type: none;
-    margin-top:30px;
+    margin-top:40px;
 }
 
 #index{
@@ -93,4 +110,25 @@ aside ul li{
 #school-label{
     position: relative;
     display: inline-block;
+    margin-top: 40px;
+}
+
+#about{
+    position: relative;
+    display: inline-block;
+    margin-top: 40px;
+}
+
+#user-panel{
+    position: relative;
+    display: inline-block;
+    width: 10%;
+}
+
+#user-img{
+    position: relative;
+    left: 50%;
+    margin-left: -25px;
+    height: 50px;
+    width: 50px;
 }

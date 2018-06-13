@@ -9,39 +9,124 @@
 </head>
 
 <body>
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script src="./css/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
     <script src="./js/main-paper.js"></script>
-    <div id="book">
-        <header>
-            <img id="logo" src="./source/img/logo.jpeg">
-            <div id="search">
-                <div id="search-control">
-                    <input id="search-text" type="text">
-                    <input id="search-button" type="button">搜索
+    <div id="wrapper">
+        <div id="book">
+            <header>
+                <img id="logo" src="./source/img/logo.jpeg">
+                <div id="search">
+                    <div id="search-control">
+                        <input id="search-text" type="text">
+                        <input id="search-button" type="button">搜索
+                    </div>
+                </div>
+            </header>
+            <div id="content">
+                <aside>
+                    <span id="index"><a>主页</a></span>
+                    <span id="market-label"><a>闲置市场</a></span>
+                    <ul>
+                        <li><a>图书</a></li>
+                        <li><a>男装</a></li>
+                        <li><a>女装</a></li>
+                        <li><a>生活用品</a></li>
+                        <li><a>数码电器</a></li>
+                        <li><a>文体用品</a></li>
+                    </ul>
+                    <span id="school-label"><a>校园生活</a></span>
+                    <ul>
+                        <li><a>兼职信息</a></li>
+                        <li><a>失物招领</a></li>
+                    </ul>
+                    <span id="about"><a>关于我们</a></span>
+                </aside>
+
+                <article>
+
+                </article>
+
+            </div>
+        </div>
+        <div id="user-panel">
+            <a href="#"><img id="user-img" src="source/img/logo.jpeg"></a>
+            <div>
+                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#Login">
+                    Login
+                </button>
+                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#Register">
+                    Register
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="Login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="LoginLabel">欢迎回来~</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="loginName">Neckname</label>
+                            <input type="form-control" class="form-control" id="loginName" placeholder="昵称">
+                        </div>
+                        <div class="form-group">
+                            <label for="loginPassword">Password</label>
+                            <input type="password" class="form-control" id="loginPassword" placeholder="(⊃д⊂)">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="toLogin" class="btn btn-primary">( ゜- ゜)つロ登录</button>
                 </div>
             </div>
-        </header>
-        <div id="content">
-            <aside>
-                <span id="index">主页</span>
-                <span id="market-label">闲置市场</span>
-                <ul>
-                    <li>图书</li>
-                    <li>男装</li>
-                    <li>女装</li>
-                    <li>生活用品</li>
-                    <li>数码电器</li>
-                    <li>文体用品</li>
-                </ul>
-                <span id="school-label">校园生活</span>
-                <ul>
-                    <li>兼职信息</li>
-                    <li>失物招领</li>
-                </ul>
-            </aside>
-
-            <article>
-                1212112222222222222222222222223
-            </article>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="Register" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="RegisterLabel">仅需填写一份表单，即可加入西邮购！</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="inputName">Neckname</label>
+                            <input class="form-control" id="inputName" placeholder="大侠姓甚名何？" type="text">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPassword">Password</label>
+                            <input type="password" class="form-control" id="inputPassword" placeholder="(⊃д⊂)">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputConfimPassword">Confirm Password</label>
+                            <input type="password" class="form-control" id="inputConfimPassword" placeholder="(⊃д⊂)">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPhoneNumber">Phone Number</label>
+                            <input type="form-control" class="form-control" id="inputPhoneNumber" placeholder="电话号码">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputXuptId">Xupt Id</label>
+                            <input type="form-control" class="form-control" id="inputXuptId" placeholder="西邮学号">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button id="toRegist" type="button" class="btn btn-primary">( ゜- ゜)つロ成为西邮购的一名会员~</button>
+                </div>
+            </div>
         </div>
     </div>
 </body>
