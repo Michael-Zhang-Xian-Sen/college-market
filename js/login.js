@@ -1,8 +1,10 @@
 $(document).ready(function () {
-    clickRegist();
     $("#toRegist").click(clickRegist);
     $("#toLogin").click(clickLogin);
 });
+
+isindex = 1;
+visitor = "";
 
 // ----------------------------------------------------------
 // 注册
@@ -25,11 +27,16 @@ function registInformation() {
 
 // 注册信息检测
 function checkRegist() {
-    console.log("执行检测")
     // 如果存在错误框，先把错误关掉
     if ($("#registError").length > 0) {
         $("#registError").alert("close");
     }
+
+    // 检测信息的正则表达式
+    var regPhone = /^[\d]{11}$/;
+    var regXuptId = /^[\d]{8}$/;
+
+    // 信息是否存在检测
     if ($("#inputName").val() == "") {
         $("#registModalContent .modal-footer").after("<div id=\"registError\" class=\"alert alert-danger alert-dismissible fade in\" role=\"alert\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">×</span></button><strong>注册失败！</strong>请把你的姓名告诉我</div>")
         return 0;
@@ -47,6 +54,12 @@ function checkRegist() {
         return 0;
     } else if ($("#inputXuptId").val() == "") {
         $("#registModalContent .modal-footer").after("<div id=\"registError\" class=\"alert alert-danger alert-dismissible fade in\" role=\"alert\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">×</span></button><strong>注册失败！</strong>请输入西邮学号，确保您是西邮的学生~</div>");
+        return 0;
+    }else if(!regPhone.test($("#inputPhoneNumber").val())){
+        $("#registModalContent .modal-footer").after("<div id=\"registError\" class=\"alert alert-danger alert-dismissible fade in\" role=\"alert\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">×</span></button><strong>注册失败！</strong>电话格式有误，请检查电话号码是否输入正确~</div>");
+        return 0;
+    }else if(!regXuptId.test($("#inputXuptId").val())){
+        $("#registModalContent .modal-footer").after("<div id=\"registError\" class=\"alert alert-danger alert-dismissible fade in\" role=\"alert\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">×</span></button><strong>注册失败！</strong>学号格式有误，请检查学号是否输入正确~</div>");
         return 0;
     }
     return 1;
