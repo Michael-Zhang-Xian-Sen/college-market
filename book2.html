@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE>
 <html>
 
 <head>
@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>西邮校园购</title>
     <link rel="stylesheet" href="./css/bootstrap-3.3.7-dist/css/bootstrap.css">
-    <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/book.css">
     <link rel="stylesheet" href="./css/font-awesome.css">
     <link rel="icon" type="image/vnd.microsoft.icon" href="./source/img/title-icon.png" />
 </head>
@@ -17,112 +17,158 @@
     <script src="./css/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
     <script src="./js/login.js"></script>
     <!-- 头部导航栏 -->
-    <header>
-        <ul>
-            <li class="header-li">
-                <img src="source/img/logo.png">
-            </li>
-            <li class="header-li">
-                <a href="./index.html">
-                    <span class="now-page">主页</span>
-                </a>
-            </li class="header-li">
-            <li class="header-li">
-                <div class="dropdown">
-                    <button class="menu-li btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
-                        aria-expanded="true">
-                        闲置市场
-                        <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                        <li>
-                            <a href="./book.html">图书</a>
-                        </li>
-                        <li>
-                            <a href="./m-cloth.html">男装</a>
-                        </li>
-                        <li>
-                            <a href="./wm-cloth.html">女装</a>
-                        </li>
-                        <li>
-                            <a href="./daily.html">生活用品</a>
-                        </li>
-                        <li>
-                            <a href="./digital.html">数码电器</a>
-                        </li>
-                        <li>
-                            <a href="./stationery.html">文体用品</a>
-                        </li>
-                    </ul>
-                </div>
-            </li>
-            <li class="header-li">
-                <div class="dropdown">
-                    <button class="menu-li btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true"
-                        aria-expanded="true">
-                        求职信息
-                        <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                        <li>
-                            <a href="./practice.html">实习生招聘</a>
-                        </li>
-                        <li>
-                            <a href="./part-time.html">兼职招聘</a>
-                        </li>
-                    </ul>
-                </div>
-            </li>
-            <li class="header-li">
-                <a href="./lost-thing.html">
-                    <span>失物招领</span>
-                </a>
-            </li>
-            <li class="header-li">
-                <a href="./about-us.html">
-                    <span>关于我们</span>
-                </a>
-            </li>
-            <li class="header-li">
-                <div class="dropdown">
-                    <button class=" menu-li btn btn-default dropdown-toggle" type="button" id="dropdownMenu5" data-toggle="dropdown" aria-haspopup="true"
-                        aria-expanded="true">
-                        登录/注册
-                        <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu5">
-                        <li>
-                            <a href="#" data-toggle="modal" data-target="#Login">登录</a>
-                        </li>
-                        <li>
-                            <a href="#" data-toggle="modal" data-target="#Register">注册</a>
-                        </li>
-                    </ul>
-                </div>
-            </li>
-        </ul>
-    </header>
-    <!-- 巨幕部分 -->
-    <div id="jumbotron" class="jumbotron">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                    aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Brand</a>
+            </div>
 
-    </div>
-
-    <div id="content-body">
-        <div id="content">
-            <article style="background-color: aquamarine" class="article">
-                <p>「闲置市场」</p>
-                <p>对闲置市场的功能做一个介绍</p>
-                <p>ps:如果你需要加这种「横条」（我不知道专业术语是什么..）的话，直接设计就可以，我到时候再加上。</p>
-                <p>pps:这个部分的长宽也可以由你来决定</p>
-            </article>
-            <article style="background-color:bisque" class="article">
-                「求职信息」 同上
-            </article>
-            <article style="background-color: blue" class="article">
-                「失物招领」 同上。
-            </article>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a href="#">Link
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">Link</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="#">Action</a>
+                            </li>
+                            <li>
+                                <a href="#">Another action</a>
+                            </li>
+                            <li>
+                                <a href="#">Something else here</a>
+                            </li>
+                            <li role="separator" class="divider"></li>
+                            <li>
+                                <a href="#">Separated link</a>
+                            </li>
+                            <li role="separator" class="divider"></li>
+                            <li>
+                                <a href="#">One more separated link</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="navbar-form navbar-left">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#">Link</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="#">Action</a>
+                            </li>
+                            <li>
+                                <a href="#">Another action</a>
+                            </li>
+                            <li>
+                                <a href="#">Something else here</a>
+                            </li>
+                            <li role="separator" class="divider"></li>
+                            <li>
+                                <a href="#">Separated link</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
         </div>
+        <!-- /.container-fluid -->
+    </nav>
+    <!-- 内容部分 -->
+    <div id="content">
+        <div id="content-body">
+            <!-- 面包屑导航 -->
+            <div id="content-header">
+                <div class="container">
+                    <div class="row">
+                        <div class="span6">
+                            <ul class="breadcrumb">
+                                <li>
+                                    <a href="./index.html">主页</a>
+                                </li>
+                                <li class="active">
+                                    图书
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- items -->
+            <div class="items col-md-3 col-xs-12">
+                <a class="items-link" href="#">
+                    <div class="items-box">
+                        <div class="items-img">
+                            <img>
+                        </div>
+                        <div class="items-name-box">
+                            <p class="items-name">《天才在左，疯子在右》</p>
+                        </div>
+                        <div class="items-message-box">
+                            <p>作者脑洞很大</p>
+                        </div>
+                        <div class="items-price-box">
+                            <span class="items-seller">Himory</span>
+                            <span class="items-price">5￥</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="items col-md-3 col-xs-12">
+                <a class="items-link" href="#">
+                    <div class="items-box">
+                        <div class="items-img">
+                            <img>
+                        </div>
+                        <div class="items-name-box">
+                            <p class="items-name">《天才在左，疯子在右》</p>
+                        </div>
+                        <div class="items-message-box">
+                            <p>作者脑洞很大</p>
+                        </div>
+                        <div class="items-price-box">
+                            <span class="items-seller">Himory</span>
+                            <span class="items-price">5￥</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+
+        </div>
+
     </div>
+    </div>
+
     <!-- icp备案号部分 -->
     <footer>
         <div id="footer-content">
@@ -187,6 +233,7 @@
             </div>
         </div>
     </footer>
+
     <!-- Modal -->
     <div class="modal fade" id="Login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">

@@ -114,15 +114,15 @@ jQuery(document).ready(function($) {
     });
 });
 
-jQuery(document).ready(function($) {
+// jQuery(document).ready(function($) {
 
-    window.setInterval(function() {
-        msgs = [$("#hitokoto").text(), weather.c[0], weather.c[2], weather.c[5], weather.c[7]];
-        var i = Math.floor(Math.random() * msgs.length);
-        showMessage(msgs[i], 10000);
-    },
-    35000);
-});
+//     window.setInterval(function() {
+//         msgs = [$("#hitokoto").text(), weather.c[0], weather.c[2], weather.c[5], weather.c[7]];
+//         var i = Math.floor(Math.random() * msgs.length);
+//         showMessage(msgs[i], 10000);
+//     },
+//     35000);
+// });
 
 jQuery(document).ready(function($) {
     window.setInterval(function() {
@@ -211,9 +211,10 @@ jQuery(document).ready(function($) {
     $(".mumu").click(function() {
         if (!ismove) {
             stat_click++;
-            if (stat_click <= 4) {
-                msgs = [weather.c[0], weather.c[2], weather.c[5], weather.c[7]];
-            } else if (stat_click > 4) {
+            // if (stat_click <= 4) {
+            //     msgs = [weather.c[0], weather.c[2], weather.c[5], weather.c[7]];
+            // } else 
+            if (stat_click > 4) {
                 msgs = ["你有完没完呀？", "你已经摸我" + stat_click + "次了", "非礼呀！救命！OH，My ladygaga"];
                 var i = Math.floor(Math.random() * msgs.length);
                 //showMessage(msgs[i]);
@@ -238,7 +239,6 @@ jQuery(document).ready(function($) {
         }
     });
 });
-
 
 function showMessage(a, b) {
     if (b == null) b = 10000;
@@ -297,35 +297,35 @@ function setCookie(name, value, days) {
 }
 var weather = Array();
 weather.s = false;
-jQuery(document).ready(function($) {
-    var date = new Date();
-    weather.d = "" + date.getFullYear() + date.getMonth() + date.getDay();
-    weather.ck = getCookie("weather");
-    if (weather.ck == null || weather.d != getCookie("wea_tstamp")) {
-        $.ajax({
-            dataType: "jsonp",
-            success: function(data) {
-                if (data.success != 1) {
-                    return;
-                }
-                weather.s = true;
-                weather.c = Array();
-                weather.c[0] = "今天是" + data.result[0].days + "，" + data.result[0].week;
-                weather.c[1] = data.result[0].citynm + "今天" + data.result[0].temp_high + "°C到" + data.result[0].temp_low + "°C";
-                weather.c[2] = data.result[0].citynm + "今天" + data.result[0].weather;
-                weather.c[3] = data.result[0].citynm + "今天" + data.result[0].winp + "，" + data.result[0].wind;
-                weather.c[4] = data.result[0].citynm + "明天" + data.result[1].temp_high + "°C到" + data.result[1].temp_low + "°C";
-                weather.c[5] = data.result[0].citynm + "明天" + data.result[1].weather;
-                weather.c[6] = data.result[0].citynm + "后天" + data.result[2].temp_high + "°C到" + data.result[2].temp_low + "°C";
-                weather.c[7] = data.result[0].citynm + "后天" + data.result[2].weather;
-                setCookie("wea_tstamp", weather.d, 1);
-                setCookie("weather", encodeURI(weather.c.join(",")), 1);
-            },
-            type: "GET",
-            url: "https://myhloliapi.sinaapp.com/weather/?callback=?"
-        });
-    } else {
-        weather.s = true;
-        weather.c = decodeURI(weather.ck).split(",");
-    }
-});
+// jQuery(document).ready(function($) {
+//     var date = new Date();
+//     weather.d = "" + date.getFullYear() + date.getMonth() + date.getDay();
+//     weather.ck = getCookie("weather");
+//     if (weather.ck == null || weather.d != getCookie("wea_tstamp")) {
+//         $.ajax({
+//             dataType: "jsonp",
+//             success: function(data) {
+//                 if (data.success != 1) {
+//                     return;
+//                 }
+//                 weather.s = true;
+//                 weather.c = Array();
+//                 weather.c[0] = "今天是" + data.result[0].days + "，" + data.result[0].week;
+//                 weather.c[1] = data.result[0].citynm + "今天" + data.result[0].temp_high + "°C到" + data.result[0].temp_low + "°C";
+//                 weather.c[2] = data.result[0].citynm + "今天" + data.result[0].weather;
+//                 weather.c[3] = data.result[0].citynm + "今天" + data.result[0].winp + "，" + data.result[0].wind;
+//                 weather.c[4] = data.result[0].citynm + "明天" + data.result[1].temp_high + "°C到" + data.result[1].temp_low + "°C";
+//                 weather.c[5] = data.result[0].citynm + "明天" + data.result[1].weather;
+//                 weather.c[6] = data.result[0].citynm + "后天" + data.result[2].temp_high + "°C到" + data.result[2].temp_low + "°C";
+//                 weather.c[7] = data.result[0].citynm + "后天" + data.result[2].weather;
+//                 setCookie("wea_tstamp", weather.d, 1);
+//                 setCookie("weather", encodeURI(weather.c.join(",")), 1);
+//             },
+//             type: "GET",
+//             url: "https://myhloliapi.sinaapp.com/weather/?callback=?"
+//         });
+//     } else {
+//         weather.s = true;
+//         weather.c = decodeURI(weather.ck).split(",");
+//     }
+// });

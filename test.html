@@ -1,107 +1,108 @@
-<!doctype html>
-<html>
+<!DOCTYPE>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>西邮校园购</title>
-    <link rel="stylesheet" href="./css/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/test.css">
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./css/global.css">
     <link rel="stylesheet" href="./css/font-awesome.css">
     <link rel="icon" type="image/vnd.microsoft.icon" href="./source/img/title-icon.png" />
 </head>
 
+
 <body>
     <script src="./js/jquery-3.3.1.min.js"></script>
     <script src="./css/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
     <script src="./js/login.js"></script>
-    <!-- 头部导航栏 -->
-    <header>
-        <ul>
-            <li class="header-li">
-                <img src="source/img/logo.png">
-            </li>
-            <li class="header-li">
-                <a href="./index.html">
-                    <span class="now-page">主页</span>
+    <nav id="nav" class="navbar navbar-default" role="navigation">
+        <div id="nav-container" class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="sr-only"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <img src="source/img/logo.png">
                 </a>
-            </li class="header-li">
-            <li class="header-li">
-                <div class="dropdown">
-                    <button class="menu-li btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
-                        aria-expanded="true">
-                        闲置市场
-                        <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                        <li>
-                            <a href="./book.html">图书</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+                <div class="header-ul">
+                    <ul class="nav navbar-nav">
+                        <li class="active">
+                            <a href="#">主页</a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                闲置市场
+                                <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                <li>
+                                    <a href="./book.html">图书</a>
+                                </li>
+                                <li>
+                                    <a href="./m-cloth.html">男装</a>
+                                </li>
+                                <li>
+                                    <a href="./wm-cloth.html">女装</a>
+                                </li>
+                                <li>
+                                    <a href="./daily.html">生活用品</a>
+                                </li>
+                                <li>
+                                    <a href="./digital.html">数码电器</a>
+                                </li>
+                                <li>
+                                    <a href="./stationery.html">文体用品</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                求职信息
+                                <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                <li>
+                                    <a href="./practice.html">实习生招聘</a>
+                                </li>
+                                <li>
+                                    <a href="./part-time.html">兼职招聘</a>
+                                </li>
+                            </ul>
                         </li>
                         <li>
-                            <a href="./m-cloth.html">男装</a>
+                            <a href="#">失物招领</a>
                         </li>
                         <li>
-                            <a href="./wm-cloth.html">女装</a>
+                            <a href="#">关于我们</a>
                         </li>
-                        <li>
-                            <a href="./daily.html">生活用品</a>
-                        </li>
-                        <li>
-                            <a href="./digital.html">数码电器</a>
-                        </li>
-                        <li>
-                            <a href="./stationery.html">文体用品</a>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                登录/注册
+                                <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu5">
+                                <li>
+                                    <a href="#" data-toggle="modal" data-target="#Login">登录</a>
+                                </li>
+                                <li>
+                                    <a href="#" data-toggle="modal" data-target="#Register">注册</a>
+                                </li>
+                            </ul>
                         </li>
                     </ul>
                 </div>
-            </li>
-            <li class="header-li">
-                <div class="dropdown">
-                    <button class="menu-li btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true"
-                        aria-expanded="true">
-                        求职信息
-                        <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                        <li>
-                            <a href="./practice.html">实习生招聘</a>
-                        </li>
-                        <li>
-                            <a href="./part-time.html">兼职招聘</a>
-                        </li>
-                    </ul>
-                </div>
-            </li>
-            <li class="header-li">
-                <a href="./lost-thing.html">
-                    <span>失物招领</span>
-                </a>
-            </li>
-            <li class="header-li">
-                <a href="./about-us.html">
-                    <span>关于我们</span>
-                </a>
-            </li>
-            <li class="header-li">
-                <div class="dropdown">
-                    <button class=" menu-li btn btn-default dropdown-toggle" type="button" id="dropdownMenu5" data-toggle="dropdown" aria-haspopup="true"
-                        aria-expanded="true">
-                        登录/注册
-                        <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu5">
-                        <li>
-                            <a href="#" data-toggle="modal" data-target="#Login">登录</a>
-                        </li>
-                        <li>
-                            <a href="#" data-toggle="modal" data-target="#Register">注册</a>
-                        </li>
-                    </ul>
-                </div>
-            </li>
-        </ul>
-    </header>
+            </div>
+        </div>
+    </nav>
+
     <!-- 巨幕部分 -->
     <div id="jumbotron" class="jumbotron">
 
