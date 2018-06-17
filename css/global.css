@@ -48,7 +48,6 @@ a:focus{
         border: 0;
         /* 注意这里整合了一个高度，不知道哪来的 */
         margin-bottom: 0;
-        border-bottom: 1px solid #f5f5f5;
         border-radius: 0;
         z-index: 1;
     }
@@ -58,12 +57,12 @@ a:focus{
         align-items: center;
         display: flex;
         justify-content: space-between;
+        border-bottom: 1px solid #f5f5f5;
         width: 100%;
         z-index: 1;
         background-color: #ffffff;
     }
     #navbar-collapse{
-        border-bottom: 2px solid #f5f5f5;
     }
 
     #header-ul{
