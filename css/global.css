@@ -43,7 +43,6 @@ a:focus{
         display: flex;
         justify-content: center;
         align-items: center;
-        /* position: fixed; */
         background-color: #ffffff;
         border: 0;
         /* 注意这里整合了一个高度，不知道哪来的 */
@@ -61,8 +60,6 @@ a:focus{
         width: 100%;
         z-index: 1;
         background-color: #ffffff;
-    }
-    #navbar-collapse{
     }
 
     #header-ul{
@@ -104,7 +101,6 @@ a:focus{
 /* footer部分 */
 footer{
     width: 100%;
-    height: 235px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -115,14 +111,13 @@ footer{
 }
 
 #footer-article{
-    height: 82%;
     width: 100%;
     border-top: 1px;
     border-style: solid;
     border-color: rgb(244, 244, 244);
 }
 
-#footer-about{
+/* #footer-about{
     height: 100%;
 }
 
@@ -136,7 +131,7 @@ footer{
 
 #footer-wx{
     height: 100%;
-}
+} */
 
 #footer-wx img{
     height: 128px;

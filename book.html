@@ -7,7 +7,7 @@
     <title>西邮校园购</title>
     <link rel="stylesheet" href="./css/bootstrap-3.3.7-dist/css/bootstrap.css">
     <link rel="stylesheet" href="./css/global.css">
-    <link rel="stylesheet" href="./css/book.css">
+    <link rel="stylesheet" href="./css/items-list.css">
     <link rel="stylesheet" href="./css/font-awesome.css">
     <link rel="icon" type="image/vnd.microsoft.icon" href="./source/img/title-icon.png" />
 </head>
@@ -34,8 +34,8 @@
                 <div class="collapse navbar-collapse" id="navbar-collapse">
                     <div class="header-ul">
                         <ul style="position: relative;" class="nav navbar-nav navbar-right">
-                            <li class="active">
-                                <a href="#">主页</a>
+                            <li>
+                                <a href="./index.html">主页</a>
                             </li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -44,7 +44,7 @@
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                                     <li>
-                                        <a href="./book.html">图书</a>
+                                        <a class="active" href="#">图书</a>
                                     </li>
                                     <li>
                                         <a href="./m-cloth.html">男装</a>
@@ -78,10 +78,10 @@
                                 </ul>
                             </li>
                             <li>
-                                <a href="#">失物招领</a>
+                                <a href="./lost-thing.html">失物招领</a>
                             </li>
                             <li>
-                                <a href="#">关于我们</a>
+                                <a href="./about-us.html">关于我们</a>
                             </li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -125,49 +125,57 @@
                 </div>
             </div>
             <!-- items -->
-            <div class="items col-md-3 col-xs-12">
-                <a class="items-link" href="#">
-                    <div class="items-box">
-                        <div class="items-img">
-                            <img>
-                        </div>
-                        <div class="items-name-box">
-                            <p class="items-name">《天才在左，疯子在右》</p>
-                        </div>
-                        <div class="items-message-box">
-                            <p>作者脑洞很大</p>
-                        </div>
-                        <div class="items-price-box">
-                            <span class="items-seller">Himory</span>
-                            <span class="items-price">5￥</span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="items col-md-3 col-xs-12">
-                <a class="items-link" href="#">
-                    <div class="items-box">
-                        <div class="items-img">
-                            <img>
-                        </div>
-                        <div class="items-name-box">
-                            <p class="items-name">《天才在左，疯子在右》</p>
-                        </div>
-                        <div class="items-message-box">
-                            <p>作者脑洞很大</p>
-                        </div>
-                        <div class="items-price-box">
-                            <span class="items-seller">Himory</span>
-                            <span class="items-price">5￥</span>
-                        </div>
-                    </div>
-                </a>
-            </div>
+            <div class="row">
+                <div class="col-sm-6 col-md-3 ">
+                    <div class="thumbnail items-box">
+                        <a href="#">
+                            <img class="items-img" src="./source/goods/book/book1.jpg" alt="">
+                            <div class="caption">
+                                <h4 class="items-name">《天才在左，疯子在右》</h4>
+                                <p class="items-message">一本大脑洞的小说</p>
+                            </div>
+                            <div class="items-details">
+                                <span class="items-seller">Himory</span>
+                                <span class="items-price">5￥</span>
+                            </div>
+                        </a>
 
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3 ">
+                    <div class="thumbnail items-box">
+                        <a href="#">
+                            <img class="items-img" src="./source/goods/book/book1.jpg" alt="">
+                            <div class="caption">
+                                <h4 class="items-name">《天才在左，疯子在右》</h4>
+                                <p class="items-message">一本大脑洞的小说</p>
+                            </div>
+                            <div class="items-details">
+                                <span class="items-seller">Himory</span>
+                                <span class="items-price">5￥</span>
+                            </div>
+                        </a>
 
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3 ">
+                    <div class="thumbnail items-box">
+                        <a href="#">
+                            <img class="items-img" src="./source/goods/book/book1.jpg" alt="">
+                            <div class="caption">
+                                <h4 class="items-name">《天才在左，疯子在右》</h4>
+                                <p class="items-message">一本大脑洞的小说</p>
+                            </div>
+                            <div class="items-details">
+                                <span class="items-seller">Himory</span>
+                                <span class="items-price">5￥</span>
+                            </div>
+                        </a>
+
+                    </div>
+                </div>
+            </div>
         </div>
-
-    </div>
     </div>
 
     <!-- icp备案号部分 -->
@@ -330,7 +338,7 @@
             var hjs = document.createElement('script');
             hjs.setAttribute('id', 'hjs');
             hjs.setAttribute('src', 'https://api.lwl12.com/hitokoto/main/get?encode=json');
-            document.getElementById("hjsbox").appendChild(hjs);
+            // document.getElementById("hjsbox").appendChild(hjs);
             t = setTimeout("getkoto()", 2000);
         }
         function echokoto(result) {
