@@ -18,9 +18,9 @@ function registInformation() {
     elements["inputPhoneNumber"] = $("#inputPhoneNumber").val();
     elements["inputXuptId"] = $("#inputXuptId").val();
     if ($("#sexMan").is(':checked')) {
-        elements["inputSex"] = "Man";
+        elements["inputSex"] = "m";
     } else {
-        elements["inputSex"] = "Woman";
+        elements["inputSex"] = "wm";
     }
     return elements;
 }
@@ -77,7 +77,7 @@ function clickRegist() {
     // 进行ajax请求
     if (check == 1) {
         var htmlObj = $.ajax({
-            url: "http://192.168.43.90:8080/CD1/user/userRegister.do",
+            url: "http://localhost:8888/register",
             data: reginfStr,
             contentType: "application/x-www-form-urlencoded",
             type: "post",
@@ -143,7 +143,7 @@ function clickLogin() {
     // 进行ajax请求
     if (check == 1) {
         var htmlObj = $.ajax({
-            url: "http://192.168.43.90:8080/CD1/user/userLogin.do",
+            url: "http://127.0.0.1:8888/login",
             data: loginfStr,
             contentType: "application/x-www-form-urlencoded",
             type: "post",
