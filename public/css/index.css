@@ -1,0 +1,27 @@
+/* 巨幕部分 */
+#jumbotron{
+    height: 900px;
+    width: 100%;
+    margin-bottom: 0px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+/* 内容部分 */
+#content-body{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#content{
+    position: relative;
+    width: 60%;
+}
+
+.article{
+    height: 600px;
+    position: relative;
+}

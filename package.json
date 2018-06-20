@@ -1,0 +1,29 @@
+{
+  "name": "web-view",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Michael-Zhang-Xian-Sen/college-market.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Michael-Zhang-Xian-Sen/college-market/issues"
+  },
+  "homepage": "https://github.com/Michael-Zhang-Xian-Sen/college-market#readme",
+  "dependencies": {
+    "cookie-parser": "^1.4.3",
+    "cookie-session": "^2.0.0-beta.3",
+    "express": "^4.16.3",
+    "express-session": "^1.15.6",
+    "mysql": "^2.15.0",
+    "session": "^0.1.0",
+    "session-file-store": "^1.2.0"
+  }
+}

@@ -1,0 +1,124 @@
+#user-information-box{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding: 30px 0;
+    width: 100%;
+    background-color: #f4f4f4;
+}
+
+#user-container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction:column;
+    width: 60%;
+}
+
+/* 用户头部信息 */
+#user-profile-header{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    background-color: #ffffff;
+    padding: 30px 20px;
+    border-radius: 6px;
+    margin:0 auto;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.07);
+}
+
+#user-profile-img{
+    width: 80px;
+}
+
+#profile-img{
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+}
+
+.profile-header-items{
+    display: block;
+    text-align: center;
+}
+
+#user-profile-name{
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+#user-profile-id{
+    color: #999;
+}
+
+/* 用户详细信息 */
+#user-profile-details{
+    display: block;
+    position: relative;
+    margin:  20px auto;
+    width: 50%;
+    background-color: #ffffff;
+    padding: 0 20px;
+    padding-bottom: 30px;
+    border-radius: 6px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.07); 
+}
+
+.user-profile-item-box{
+    width: 100%;
+    border-bottom: 1px solid #eee;
+    margin-top: 20px;
+}
+
+.user-profile-label{
+    position: absolute;
+    color: #999;
+    font-size: 16px;
+}
+
+.user-profile-item{
+    width: 100%;
+    height: 100%;    
+}
+
+#user-sex-box{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 90px;
+}
+
+.user-sex{
+
+    margin-left: 10px;
+}
+
+#user-resume-box{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;    
+}
+
+.user-link-box{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    padding-top: 25px;
+}
+
+#user-address-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90px;
+}
+
+#user-deal-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90px;
+}
