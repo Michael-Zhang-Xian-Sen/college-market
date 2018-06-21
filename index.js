@@ -4,10 +4,12 @@ var bodyParser = require("body-parser");
 var cookieParser = require("cookie-parser");
 var mysql = require("mysql");
 
+
 var app = express();
 
 var register = require("./router/register.js")
 var countVisit = require("./router/count")
+
 
 // 设置默认静态文件
 app.use(express.static('public'));
@@ -20,9 +22,9 @@ app.use(session({
 	secret: 'Himory',
 	name: 'sid',   //这里的name值得是cookie的name，默认cookie的name是：connect.sid
 	cookie: {
-		maxAge: 1000 * 60 * 2,
+		maxAge: 1000 * 60 * 60,
 		secure: false
-	},  //设置maxAge是80000ms，即80s后session和相应的cookie失效过期
+	},  //设置maxAge是1s*60*60，即一小时后session和相应的cookie失效过期
 	resave: false,
 	saveUninitialized: true,
 }));
@@ -41,6 +43,9 @@ function connectDB() {
 	conn.connect();
 	return conn;
 }
+
+// 全局使用这一个connection
+var connection = connectDB();
 
 // 检查当前用户是否有session记录
 app.get('/checkStatus', function (req, res) {
@@ -65,7 +70,7 @@ app.get('/checkStatus', function (req, res) {
 
 		console.log("从session中获取name为:" + name);
 		console.log("从session中获取id为:" + id);
-		connection = connectDB();
+		// connection = connectDB();
 		var querySql = "SELECT * FROM user where id = " + req.session.xuptId;
 		connection.query(querySql, function (error, results, field) {
 			// sql查询出错错误处理
@@ -86,7 +91,7 @@ app.get('/checkStatus', function (req, res) {
 				res.setHeader("Content-Type", "application/json");
 				res.send(msgString)
 
-				connection.end();
+				// connection.end();
 
 				return;
 				// 验证成功
@@ -102,7 +107,7 @@ app.get('/checkStatus', function (req, res) {
 				res.write(msgString)
 				res.end();
 
-				connection.end();
+				// connection.end();
 
 				return;
 			}
@@ -122,7 +127,7 @@ app.post('/login', function (req, res) {
 	console.log("dataObj数据ID数据为：" + dataObj.loginId);
 	// 查询该用户是否存在
 
-	connection = connectDB();
+	// connection = connectDB();
 
 	var querySql = "SELECT * FROM user where id = " + "\"" + dataObj.loginId + "\"";
 	connection.query(querySql, function (error, results, field) {
@@ -149,7 +154,7 @@ app.post('/login', function (req, res) {
 			res.setHeader("Content-Type", "application/json");
 			res.send(msgString)
 
-			connection.end();
+			// connection.end();
 			// 密码输入不正确
 		} else if (results[0].password != dataObj.loginPassword) {
 			console.log("dataObj.inputPassword = " + dataObj.loginPassword);
@@ -163,7 +168,7 @@ app.post('/login', function (req, res) {
 			res.setHeader("Content-Type", "application/json");
 			res.send(msgString)
 
-			connection.end();
+			// connection.end();
 			return;
 			// 验证成功
 		} else {
@@ -181,7 +186,7 @@ app.post('/login', function (req, res) {
 			res.setHeader("Content-Type", "application/json");
 			res.send(msgString)
 
-			connection.end();
+			// connection.end();
 
 			return;
 		}
@@ -210,7 +215,7 @@ app.get("/logout", function (req, res) {
 
 // 注册的设置
 app.post('/register', function (req, res) {
-	register.register(req, res);
+	register.register(req, res,connection);
 	console.log("register执行结束")
 })
 
@@ -239,7 +244,7 @@ app.post('/updateInformation', function (req, res) {
 
 		console.log("从session中获取name为:" + name);
 		console.log("从session中获取id为:" + id);
-		connection = connectDB();
+		// connection = connectDB();
 		var querySql = "SELECT * FROM user where id = " + req.session.xuptId;
 		connection.query(querySql, function (error, results, field) {
 			// sql查询出错错误处理
@@ -369,7 +374,7 @@ app.get('/getInformation', function (req, res) {
 
 		console.log("从session中获取name为:" + name);
 		console.log("从session中获取id为:" + id);
-		connection = connectDB();
+		// connection = connectDB();
 		var querySql = "SELECT * FROM user where id = " + req.session.xuptId;
 		connection.query(querySql, function (error, results, field) {
 			// sql查询出错错误处理

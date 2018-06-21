@@ -2,7 +2,7 @@ const mysql = require("mysql");
 
 
 // 注册程序
-function register(request, response) {
+function register(request, response,connection) {
 
     var msg;
     // 查看session
@@ -29,24 +29,24 @@ function register(request, response) {
     var xuptId = dataObject.inputXuptId;
     var sex = dataObject.inputSex;
 
-    // 建立数据库连接对象
-    var connection = mysql.createConnection({
-        host: 'localhost',
-        user: 'root',
-        password: '',
-        database: 'xupt_go',
-        port: 3308
-    })
+    // // 建立数据库连接对象
+    // var connection = mysql.createConnection({
+    //     host: 'localhost',
+    //     user: 'root',
+    //     password: '',
+    //     database: 'xupt_go',
+    //     port: 3308
+    // })
 
-    // 连接数据库
-    connection.connect(function (err) {
-        if (err) {
-            console.log("连接数据库失败！")
-            console.log(err);
-        } else {
-            console.log("成功连接数据库！");
-        }
-    })
+    // // 连接数据库
+    // connection.connect(function (err) {
+    //     if (err) {
+    //         console.log("连接数据库失败！")
+    //         console.log(err);
+    //     } else {
+    //         console.log("成功连接数据库！");
+    //     }
+    // })
 
     // 检查用户是否已存在
     var querySql = "SELECT * FROM user where id = " + xuptId + " or name = \"" + user + "\"";
@@ -100,8 +100,8 @@ function register(request, response) {
                     response.end();
                     
                     // 响应结束，关闭数据库
-                    console.log("响应结束，关闭数据库");
-                    connection.end();
+                    // console.log("响应结束，关闭数据库");
+                    // connection.end();
                     return;
                 }
             })
@@ -132,7 +132,7 @@ function register(request, response) {
             response.write(msgString);
             response.end();
 
-            connection.end();
+            // connection.end();
             return;
         }
     });
