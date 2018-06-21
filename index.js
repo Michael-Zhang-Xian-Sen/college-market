@@ -1,3 +1,4 @@
+"use strict"
 var express = require('express');
 var session = require("express-session");
 var bodyParser = require("body-parser");
@@ -34,9 +35,9 @@ function connectDB() {
 	let conn = mysql.createConnection({
 		host: 'localhost',
 		user: 'root',
-		password: '',
+		password: 'pc8Aeubu',
 		database: 'xupt_go',
-		port: 3308,
+		port: 3306,
 		multipleStatements: true
 	});
 
@@ -49,9 +50,11 @@ var connection = connectDB();
 
 // 检查当前用户是否有session记录
 app.get('/checkStatus', function (req, res) {
-	console.log("/checkStatus req.session =");
-	console.dir(req.session)
+	console.log("/checkStatus开始执行................................")
+	console.log("/checkStatus req.session.name ="+req.session.name);
 	// 如果session不存在
+	console.log("dir session");
+	console.dir(req.session);
 	var msg;
 	if (!req.session.name || req.session.name == "undefined") {
 		msg = {
@@ -59,7 +62,7 @@ app.get('/checkStatus', function (req, res) {
 		}
 		var msgString = JSON.stringify(msg);
 		res.setHeader("Access-Control-Allow-Credentials", true);
-		res.setHeader("Access-Control-Allow-Origin", "http://localhost:8888");
+		res.setHeader("Access-Control-Allow-Origin", "http://www.ewinds.pw:8888");
 		res.setHeader("Content-Type", "application/json");
 		res.write(msgString)
 		res.end();
@@ -87,7 +90,7 @@ app.get('/checkStatus', function (req, res) {
 				}
 				var msgString = JSON.stringify(msg);
 				res.setHeader("Access-Control-Allow-Credentials", true);
-				res.setHeader("Access-Control-Allow-Origin", "http://localhost:8888");
+				res.setHeader("Access-Control-Allow-Origin", "http://www.ewinds.pw:8888");
 				res.setHeader("Content-Type", "application/json");
 				res.send(msgString)
 
@@ -102,7 +105,7 @@ app.get('/checkStatus', function (req, res) {
 				}
 				var msgString = JSON.stringify(msg);
 				res.setHeader("Access-Control-Allow-Credentials", true);
-				res.setHeader("Access-Control-Allow-Origin", "http://localhost:8888");
+				res.setHeader("Access-Control-Allow-Origin", "http://www.ewinds.pw:8888");
 				res.setHeader("Content-Type", "application/json");
 				res.write(msgString)
 				res.end();
@@ -150,7 +153,7 @@ app.post('/login', function (req, res) {
 			}
 			var msgString = JSON.stringify(msg);
 			res.setHeader("Access-Control-Allow-Credentials", true);
-			res.setHeader("Access-Control-Allow-Origin", "http://localhost:8888");
+			res.setHeader("Access-Control-Allow-Origin", "http://www.ewinds.pw:8888");
 			res.setHeader("Content-Type", "application/json");
 			res.send(msgString)
 
@@ -164,7 +167,7 @@ app.post('/login', function (req, res) {
 			}
 			var msgString = JSON.stringify(msg);
 			res.setHeader("Access-Control-Allow-Credentials", true);
-			res.setHeader("Access-Control-Allow-Origin", "http://localhost:8888");
+			res.setHeader("Access-Control-Allow-Origin", "http://www.ewinds.pw:8888");
 			res.setHeader("Content-Type", "application/json");
 			res.send(msgString)
 
@@ -179,10 +182,9 @@ app.post('/login', function (req, res) {
 			req.session.name = results[0].name;
 			req.session.xuptId = results[0].id;
 
-
 			var msgString = JSON.stringify(msg);
 			res.setHeader("Access-Control-Allow-Credentials", true);
-			res.setHeader("Access-Control-Allow-Origin", "http://localhost:8888");
+			res.setHeader("Access-Control-Allow-Origin", "http://www.ewinds.pw:8888");
 			res.setHeader("Content-Type", "application/json");
 			res.send(msgString)
 
@@ -207,7 +209,7 @@ app.get("/logout", function (req, res) {
 
 	var msgString = JSON.stringify(msg);
 	res.setHeader("Access-Control-Allow-Credentials", true);
-	res.setHeader("Access-Control-Allow-Origin", "http://localhost:8888");
+	res.setHeader("Access-Control-Allow-Origin", "http://www.ewinds.pw:8888");
 	res.setHeader("Content-Type", "application/json");
 	res.send(msgString);
 	return;
@@ -232,7 +234,7 @@ app.post('/updateInformation', function (req, res) {
 		}
 		var msgString = JSON.stringify(msg);
 		res.setHeader("Access-Control-Allow-Credentials", true);
-		res.setHeader("Access-Control-Allow-Origin", "http://localhost:8888");
+		res.setHeader("Access-Control-Allow-Origin", "http://www.ewinds.pw:8888");
 		res.setHeader("Content-Type", "application/json");
 		res.write(msgString);
 		res.end();
@@ -261,7 +263,7 @@ app.post('/updateInformation', function (req, res) {
 				}
 				var msgString = JSON.stringify(msg);
 				res.setHeader("Access-Control-Allow-Credentials", true);
-				res.setHeader("Access-Control-Allow-Origin", "http://localhost:8888");
+				res.setHeader("Access-Control-Allow-Origin", "http://www.ewinds.pw:8888");
 				res.setHeader("Content-Type", "application/json");
 				res.write(msgString);
 				res.end()
@@ -306,7 +308,7 @@ app.post('/updateInformation', function (req, res) {
 					updateSql = updateSql + "`wx` = \"" + dataObj.wx + "\", ";
 				}
 				if (dataObj.address) {
-					updateSql = updateSql + "\"" + dataObj.address + "\", ";
+					updateSql = updateSql + "`address` = \"" + dataObj.address + "\", ";
 				}
 
 				updateSql = updateSql.substr(0,updateSql.length-2) + whereis;
@@ -323,21 +325,28 @@ app.post('/updateInformation', function (req, res) {
 					}
 
 					// 直接返回数据然后渲染，少几次请求
-					console.log(results[0]);
+					console.log("results");
+					console.dir(results);
+					console.log("results[0].dir:");
+					console.dir(results[0]);
+					console.log("results[1]");
+					console.dir(results[1]);
+
+					console.log("results[1].name = "+results[1][0].name);
 					var msg = {
 						"status": "success",
-						"name": results[0].name,
-						"id": results[0].id,
-						"sex": results[0].sex,
-						"phone": results[0].phone,
-						"qq": results[0].qq,
-						"wx": results[0].wx,
-						"address": results[0].address,
-						"resume": results[0].resume
+						"name": results[1][0].name,
+						"id": results[1][0].id,
+						"sex": results[1][0].sex,
+						"phone": results[1][0].phone,
+						"qq": results[1][0].qq,
+						"wx": results[1][0].wx,
+						"address": results[1][0].address,
+						"resume": results[1][0].resume
 					}
 					var msgString = JSON.stringify(msg);
 					res.setHeader("Access-Control-Allow-Credentials", true);
-					res.setHeader("Access-Control-Allow-Origin", "http://localhost:8888");
+					res.setHeader("Access-Control-Allow-Origin", "http://www.ewinds.pw:8888");
 					res.setHeader("Content-Type", "application/json");
 					res.write(msgString);
 					res.end()
@@ -350,24 +359,24 @@ app.post('/updateInformation', function (req, res) {
 
 // 获取个人信息
 app.get('/getInformation', function (req, res) {
+	console.log("/getInformation开始执行................................")
 	console.log("/getInformation req.session =");
 	console.log(req.session)
-	console.log("开始获取信息。。。。。。。。。。。")
 	var msg;
-	console.log("req.session.name = " + req.session.name);
+	console.log("/getInformation req.session.name = " + req.session.name);
 	// 如果该用户不带有session，直接返回
+	var msg;
 	if (!req.session.name || req.session.name == "undefined") {
 		msg = {
 			"status": "failed"
 		}
 		var msgString = JSON.stringify(msg);
 		res.setHeader("Access-Control-Allow-Credentials", true);
-		res.setHeader("Access-Control-Allow-Origin", "http://localhost:8888");
+		res.setHeader("Access-Control-Allow-Origin", "http://www.ewinds.pw:8888");
 		res.setHeader("Content-Type", "application/json");
 		res.write(msgString)
 		res.end();
 		return;
-		// 用户存在
 	} else {
 		var name = req.session.name;
 		var id = req.session.xuptId;
@@ -391,7 +400,7 @@ app.get('/getInformation', function (req, res) {
 				}
 				var msgString = JSON.stringify(msg);
 				res.setHeader("Access-Control-Allow-Credentials", true);
-				res.setHeader("Access-Control-Allow-Origin", "http://localhost:8888");
+				res.setHeader("Access-Control-Allow-Origin", "http://www.ewinds.pw:8888");
 				res.setHeader("Content-Type", "application/json");
 				res.write(msgString);
 				res.end()
@@ -412,6 +421,7 @@ app.get('/getInformation', function (req, res) {
 				}
 				var msgString = JSON.stringify(msg);
 				res.setHeader("Access-Control-Allow-Credentials", true);
+				res.setHeader("Access-Control-Allow-Origin", "http://www.ewinds.pw:8888");
 				res.setHeader("Content-Type", "application/json");
 				res.write(msgString)
 				res.end();

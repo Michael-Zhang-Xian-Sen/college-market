@@ -7,9 +7,12 @@ $(document).ready(function () {
 // 获取个人信息
 function getInformation() {
     var htmlObj = $.ajax({
-        url: "http://localhost:8888/getInformation",
+        url: "http://182.254.134.194:8888/getInformation",
         contentType: "application/x-www-form-urlencoded",
         type: "get",
+        xhrFields:{
+            withCredentials:true
+        }, 
         datatype: "jsonp",
         jsonp: "callback",
         success: function (msg) {
@@ -79,9 +82,12 @@ function updateInformation() {
     dataString = JSON.stringify(dataObject);
 
     var htmlObj = $.ajax({
-        url: "http://localhost:8888/updateInformation",
+        url: "http://182.254.134.194:8888/updateInformation",
         contentType: "application/x-www-form-urlencoded",
         type: "post",
+        xhrFields:{
+            withCredentials:true
+        }, 
         data: dataString,
         datatype: "jsonp",
         jsonp: "callback",
@@ -91,6 +97,8 @@ function updateInformation() {
                 console.log("更改个人信息成功");
                 $("#updateModalContent .modal-footer").after("<div id=\"upadteError\" class=\" alert alert-warning alert-dismissible fade in\" role=\"alert\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">×</span></button><strong>更改成功！</strong>将于<span id=\"refresh-page-time\">3</span>s后关闭当前模态框！(ง •_•)ง </div>");
                 // 更改个人信息
+                console.log("msg内容为：")
+                console.dir(msg);
                 $("#user-profile-name").text(msg.name);
                 $("#user-profile-id").text(msg.id);
                 $("#user-resume").text(msg.resume);

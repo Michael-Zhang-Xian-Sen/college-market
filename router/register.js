@@ -92,8 +92,9 @@ function register(request, response,connection) {
 
                     msgString = JSON.stringify(msg);
                     response.writeHead(200, {
+                        "Access-Control-Allow-Credentials":true,
                         "Content-Type": "application/json",
-                        "Access-Control-Allow-Origin": "*"
+                        "Access-Control-Allow-Origin": "http://www.ewinds.pw:8888"
                     })
 
                     response.write(msgString);
@@ -125,8 +126,9 @@ function register(request, response,connection) {
             console.log("准备响应数据")
             msgString = JSON.stringify(msg);
             response.writeHead(200, {
+                "Access-Control-Allow-Credentials":true,
                 "Content-Type": "application/json",
-                "Access-Control-Allow-Origin": "*"
+                "Access-Control-Allow-Origin": "http://www.ewinds.pw:8888"
             })
 
             response.write(msgString);

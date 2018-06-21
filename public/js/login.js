@@ -13,10 +13,13 @@ title = "西邮校园购";
 
 function count() {
     var htmlObj = $.ajax({
-        url: "http://127.0.0.1:8888/count",
+        url: "http://182.254.134.194:8888/count",
         contentType: "application/x-www-form-urlencoded",
         type: "get",
         datatype: "jsonp",
+        xhrFields:{
+            withCredentials:true
+        }, 
         jsonp: "callback",
         success: function (msg) {
             console.log(msg.status);
@@ -39,9 +42,12 @@ function count() {
 
 function checkStatus() {
     var htmlObj = $.ajax({
-        url: "http://localhost:8888/checkStatus",
+        url: "http://182.254.134.194:8888/checkStatus",
         contentType: "application/x-www-form-urlencoded",
         type: "get",
+        xhrFields:{
+            withCredentials:true
+        }, 
         datatype: "jsonp",
         jsonp: "callback",
         success: function (msg) {
@@ -145,10 +151,13 @@ function clickRegist() {
     // 进行ajax请求
     if (check == 1) {
         var htmlObj = $.ajax({
-            url: "http://localhost:8888/register",
+            url: "http://182.254.134.194:8888/register",
             data: reginfStr,
             contentType: "application/x-www-form-urlencoded",
             type: "post",
+            xhrFields:{
+                withCredentials:true
+            }, 
             datatype: "jsonp",
             jsonp: "callback",
             success: function (msg) {
@@ -229,10 +238,13 @@ function clickLogin() {
     // 进行ajax请求
     if (check == 1) {
         var htmlObj = $.ajax({
-            url: "http://localhost:8888/login",
+            url: "http://182.254.134.194:8888/login",
             data: loginfStr,
             contentType: "application/x-www-form-urlencoded",
             type: "post",
+            xhrFields:{
+                withCredentials:true
+            }, 
             datatype: "jsonp",
             jsonp: "callback",
             success: function (msg) {
@@ -290,9 +302,12 @@ function skip() {
 
 function userLogout() {
     var htmlObj = $.ajax({
-        url: "http://localhost:8888/logout",
+        url: "http://182.254.134.194:8888/logout",
         contentType: "application/x-www-form-urlencoded",
         type: "get",
+        xhrFields:{
+            withCredentials:true
+        }, 
         datatype: "jsonp",
         jsonp: "callback",
         

@@ -182,3 +182,8 @@ footer{
 /* .do-success{
     background-color: #419641 !important;
 } */
+
+/* UE鼠标样式 */
+.pointer{
+    cursor: pointer;
+}
