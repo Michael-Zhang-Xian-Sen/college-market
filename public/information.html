@@ -98,18 +98,17 @@
     <div id="user-information-box">
         <div id="user-container">
             <div id="user-profile-header">
-                <div id="user-profile-img">
-                    <img id="profile-img" class="profile-header-items" src="./source/img/user.gif">
-                    <span id="user-profile-name" class="profile-header-items">张浩</span>
-                    <span id="user-profile-id" class="profile-header-items">04152072</span>
-                </div>
+                <!-- <div id="user-profile-img"> -->
+                <img id="profile-img" class="profile-header-items" src="./source/img/user.gif">
+                <span id="user-profile-name" class="profile-header-items"></span>
+                <span id="user-profile-id" class="profile-header-items"></span>
             </div>
             <div id="user-profile-details">
                 <div class="user-profile-item-box">
                     <span class="user-profile-label">个人简介</span>
                     <div class="user-profile-item">
                         <div id="user-resume-box">
-                            <span id="user-resume">「究竟是世界改变了我们，还是我们改变了世界。」</span>
+                            <span id="user-resume"><a href="javascript:void(0);" data-toggle="modal" data-target="#add-resume">登录</a></span>
                         </div>
                     </div>
                 </div>
@@ -117,7 +116,7 @@
                     <span class="user-profile-label">性别</span>
                     <div class="user-profile-item">
                         <div id="user-sex-box">
-                            <i class="fa fa-mars fa-2x" aria-hidden="true"></i> <span class="user-sex">Mars</span>
+
                         </div>
                     </div>
                 </div>
@@ -127,19 +126,19 @@
                         <div class="col-md-4 user-link-box">
                             <p>
                                 <span>手机：</span>
-                                <span id="user-profile-mobile">15691788231</span>
+                                <span id="user-profile-mobile"></span>
                             </p>
                         </div>
                         <div class="col-md-4 user-link-box">
                             <p>
                                 <span>QQ：</span>
-                                <span id="uesr-profile-qq">xxxxxxxxxx</span>
+                                <span id="uesr-profile-qq"></span>
                             </p>
                         </div>
                         <div class="col-md-4 user-link-box">
                             <p>
                                 <span>微信：</span>
-                                <span id="user-profile-wx">yyyyyyyyyyy</span>
+                                <span id="user-profile-wx"></span>
                             </p>
                         </div>
                     </div>
@@ -227,7 +226,7 @@
             </div>
         </div>
     </footer>
-    <!-- Modal -->
+    <!-- 登录Modal -->
     <div class="modal fade" id="Login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
             <div id="loginModalContent" class="modal-content">
@@ -255,7 +254,7 @@
             </div>
         </div>
     </div>
-    <!-- Modal -->
+    <!-- 注册Modal -->
     <div class="modal fade" id="Register" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
             <div id="registModalContent" class="modal-content">
@@ -306,6 +305,31 @@
             </div>
         </div>
     </div>
+    <!-- 添加 resume -->
+    <div class="modal fade" id="add-resume" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div id="resumeModalContent" class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title" id="resumeModalContent">仅需填写一份表单，即可加入西邮购！</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="请输入您的简介~">Neckname</label>
+                                <input class="form-control" id="" placeholder="大侠姓甚名何？" type="text">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="add-resume-button" type="button" class="btn btn-primary">( ゜- ゜)つロ成为西邮购的一名会员~</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     <script type="text/javascript" src="js/spig.js" charset="gb2312"></script>
     <div id="spig" class="spig">
         <div id="message">加载中……</div>

@@ -42,7 +42,7 @@ function connectDB() {
 }
 
 // 检查当前用户是否有session记录
-app.use('/checkStatus', function (req, res) {
+app.get('/checkStatus', function (req, res) {
 	console.log("/checkStatus req.session =");
 	console.dir(req.session)
 	// 如果session不存在
@@ -111,7 +111,7 @@ app.use('/checkStatus', function (req, res) {
 
 
 // 登录的设置
-app.use('/login', function (req, res) {
+app.post('/login', function (req, res) {
 	// 获取post数据
 	var data = [];
 	for (var i in req.body) {
@@ -188,7 +188,7 @@ app.use('/login', function (req, res) {
 })
 
 // 登出操作
-app.use("/logout", function (req, res) {
+app.get("/logout", function (req, res) {
 	delete req.session.name;
 	delete req.session.xuptId;
 	// console.log(req.session.name);
@@ -208,17 +208,9 @@ app.use("/logout", function (req, res) {
 })
 
 // 注册的设置
-app.use('/register', function (req, res) {
+app.post('/register', function (req, res) {
 	register.register(req, res);
 	console.log("register执行结束")
-})
-
-app.use('/information', function (req, res) {
-	var msg;
-	console.log("req.session.name = "+req.session.name);
-	res.setHeader("Access-Control-Allow-Credentials", true);
-	res.setHeader("Content-Type", "application/json");
-	res.end("ok");
 })
 
 // 获取个人信息
@@ -228,7 +220,7 @@ app.get('/getInformation', function (req, res) {
 	console.log("开始获取信息。。。。。。。。。。。")
 	var msg;
 	console.log("req.session.name = " + req.session.name);
-	// 如果该用户不存在，则不返回信息
+	// 如果该用户不带有session，直接返回
 	if (!req.session.name || req.session.name == "undefined") {
 		msg = {
 			"status": "failed"
@@ -240,6 +232,7 @@ app.get('/getInformation', function (req, res) {
 		res.write(msgString)
 		res.end();
 		return;
+	// 用户存在
 	} else {
 		var name = req.session.name;
 		var id = req.session.xuptId;
@@ -265,9 +258,8 @@ app.get('/getInformation', function (req, res) {
 				res.setHeader("Access-Control-Allow-Credentials", true);
 				res.setHeader("Access-Control-Allow-Origin", "http://localhost:8888");
 				res.setHeader("Content-Type", "application/json");
-				res.send(msgString)
-
-				connection.end();
+				res.write(msgString);
+				res.end()
 
 				return;
 				// 验证成功
@@ -285,13 +277,9 @@ app.get('/getInformation', function (req, res) {
 				}
 				var msgString = JSON.stringify(msg);
 				res.setHeader("Access-Control-Allow-Credentials", true);
-				res.setHeader("Access-Control-Allow-Origin", "*");
 				res.setHeader("Content-Type", "application/json");
 				res.write(msgString)
 				res.end();
-
-				connection.end();
-
 				return;
 			}
 		})
@@ -299,7 +287,7 @@ app.get('/getInformation', function (req, res) {
 })
 
 // 以下全是路由！
-app.use("/count", function (req, res) {
+app.get("/count", function (req, res) {
 	countVisit.countVisit(req, res);
 })
 

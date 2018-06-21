@@ -1,0 +1,179 @@
+#content{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#content-body{
+    width: 60%;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* 面包屑导航 */
+#content-header{
+    height: 49px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.breadcrumb{
+    background-color: #ffffff;
+    margin-bottom: 0;
+}
+
+.items-img{
+    height: 256px;
+    width: 256px;
+    margin: 0;
+}
+
+.items-box{
+    padding: 0;
+    margin: 0;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.items-box h4{
+    text-align: center;
+}
+
+.items-message{
+    height: 60px;
+}
+
+.items-details{
+    height: 34px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #f5f5f5;
+    margin-bottom: 0;
+    padding-left: 9px;
+    padding-right: 9px;
+}
+
+/* 图片部分 */
+#goods-detail-img-box-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: left;
+    width: 60%;
+    height: 70%;
+    background-color: #f4f4f4;
+}
+
+#goods-detail-img-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 65%;
+    padding: 30px 20px;
+    background: #ffffff;
+    /* box-shadow: 0 1px 2px rgba(0,0,0,0.07);  */
+    box-shadow: 10px 10px 7px  rgba(0,0,0,0.15);
+    border-radius: 6px;
+    /* box-shadow: 1px 5px 10px 5px rgba(0,0,0,0.15); */
+}
+
+#goods-detail-img{
+    height: 100%;
+}
+
+/* 商品详细信息部分 */
+
+#goods-detail-information-box-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: left;
+    width: 60%;
+    height: 70%;
+    width: 40%;
+}
+
+#goods-detail-information-box{
+    height: 65%;
+    width: 100%;
+    padding:0 30px;
+}
+
+#goods-detail-information-head-box{
+    border-bottom: 1px solid #f5f5f5;
+}
+
+#goods-detail-information-head-box h3{
+    font-size: 26px;
+    margin: 0;
+    padding: 10px 0 15px 0;
+}
+
+#goods-detail-seller,#goods-detail-time-information{
+    font-size: 10px;
+    color: #999;
+}
+
+#goods-detail-time{
+    margin-left: 5px;
+}
+
+#goods-detail-message-box{
+    display: flex;
+    height: 90px;
+    justify-content: center;
+    align-items: center;
+    color: #999;
+}
+
+.goods-detail-information-others-box{
+    padding: 10px 0;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.goods-detail-label{
+    position: absolute;
+    color: black;
+    font-size: 15px;
+}
+
+.user-link-box{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    padding-top: 35px;
+}
+
+.user-profile-item{
+    color: #999;
+}
+
+.hack-link{
+    border-right: 1px solid #f5f5f5;
+}
+
+/* 购买栏 */
+#goods-detail-price-box{
+    display: flex;
+    padding: 10px 0;
+    font-size: 30px;
+    justify-content: space-between;
+}
+
+#goods-detail-price{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#goods-buy{
+    margin: 20px 0;
+    padding: 12px 20px;
+    letter-spacing: 2px;
+    background-color: #17c5a7;
+    color: #ffffff;
+}
