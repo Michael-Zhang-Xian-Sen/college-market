@@ -34,7 +34,8 @@ function connectDB() {
 		user: 'root',
 		password: '',
 		database: 'xupt_go',
-		port: 3308
+		port: 3308,
+		multipleStatements: true
 	});
 
 	conn.connect();
@@ -213,6 +214,135 @@ app.post('/register', function (req, res) {
 	console.log("register执行结束")
 })
 
+app.post('/updateInformation', function (req, res) {
+	console.log("/getInformation req.session =");
+	console.log(req.session)
+	console.log("开始获取更新信息。。。。。。。。。。。")
+	var msg;
+	console.log("req.session.name = " + req.session.name);
+	// 如果该用户不带有session，直接返回，不可更新数据
+	if (!req.session.name || req.session.name == "undefined") {
+		msg = {
+			"status": "failed"
+		}
+		var msgString = JSON.stringify(msg);
+		res.setHeader("Access-Control-Allow-Credentials", true);
+		res.setHeader("Access-Control-Allow-Origin", "http://localhost:8888");
+		res.setHeader("Content-Type", "application/json");
+		res.write(msgString);
+		res.end();
+		return;
+		// 用户存在
+	} else {
+		var name = req.session.name;
+		var id = req.session.xuptId;
+
+		console.log("从session中获取name为:" + name);
+		console.log("从session中获取id为:" + id);
+		connection = connectDB();
+		var querySql = "SELECT * FROM user where id = " + req.session.xuptId;
+		connection.query(querySql, function (error, results, field) {
+			// sql查询出错错误处理
+			if (error) {
+				console.log("查询发生错误！");
+				console.log(error);
+			}
+
+			// results为空，查无此人
+			if (results == "") {
+				var msg = {
+					"status": "faild",
+					"error": "none_exist_user"
+				}
+				var msgString = JSON.stringify(msg);
+				res.setHeader("Access-Control-Allow-Credentials", true);
+				res.setHeader("Access-Control-Allow-Origin", "http://localhost:8888");
+				res.setHeader("Content-Type", "application/json");
+				res.write(msgString);
+				res.end()
+
+				return;
+				// 查询到该用户，进行数据更新
+			} else {
+				// 获取post数据
+				var data = [];
+				for (var i in req.body) {
+					data.push(i);
+				}
+				var dataObj = JSON.parse(data[0]);
+				console.log("dataObj数据ID数据为：" + dataObj.loginId);
+
+				// 组成查询字符串
+				var updateSql = "UPDATE user SET ";
+				var whereis = " where id = " + id;
+				if(dataObj.resume){
+					console.log("dataObj.resume为真");
+				}else{
+					console.log("dataObj.resume为假");
+				}
+				console.log("dataObj.resume =? "+(dataObj.resume))
+				console.log("dataObj.resume ==\"\"? "+(dataObj.sex == ""))
+				console.log("dataObj.resume ==\"undefined\"? "+(dataObj.sex == "undefined"))
+
+
+				if (dataObj.sex) {
+					updateSql = updateSql + "`sex` = \"" + dataObj.sex + "\", ";
+				}
+				if (dataObj.resume) {
+					updateSql = updateSql + "`resume` = \"" + dataObj.resume + "\", ";
+				}
+				if (dataObj.phone) {
+					updateSql = updateSql + "`phone` = \"" + dataObj.phone + "\", ";
+				}
+				if (dataObj.qq) {
+					updateSql = updateSql + "`qq` = \"" + dataObj.qq + "\", ";
+				}
+				if (dataObj.wx) {
+					updateSql = updateSql + "`wx` = \"" + dataObj.wx + "\", ";
+				}
+				if (dataObj.address) {
+					updateSql = updateSql + "\"" + dataObj.address + "\", ";
+				}
+
+				updateSql = updateSql.substr(0,updateSql.length-2) + whereis;
+				var querySql = ";SELECT * FROM user where id = "+id;
+				updateSql = updateSql+querySql;
+				
+				console.log("updateSql = "+updateSql);
+
+				connection.query(updateSql, function (error, results, field) {
+					// sql查询出错错误处理
+					if (error) {
+						console.log("查询发生错误！");
+						console.log(error);
+					}
+
+					// 直接返回数据然后渲染，少几次请求
+					console.log(results[0]);
+					var msg = {
+						"status": "success",
+						"name": results[0].name,
+						"id": results[0].id,
+						"sex": results[0].sex,
+						"phone": results[0].phone,
+						"qq": results[0].qq,
+						"wx": results[0].wx,
+						"address": results[0].address,
+						"resume": results[0].resume
+					}
+					var msgString = JSON.stringify(msg);
+					res.setHeader("Access-Control-Allow-Credentials", true);
+					res.setHeader("Access-Control-Allow-Origin", "http://localhost:8888");
+					res.setHeader("Content-Type", "application/json");
+					res.write(msgString);
+					res.end()
+					return;
+				})
+			}
+		})
+	}
+});
+
 // 获取个人信息
 app.get('/getInformation', function (req, res) {
 	console.log("/getInformation req.session =");
@@ -232,7 +362,7 @@ app.get('/getInformation', function (req, res) {
 		res.write(msgString)
 		res.end();
 		return;
-	// 用户存在
+		// 用户存在
 	} else {
 		var name = req.session.name;
 		var id = req.session.xuptId;
@@ -286,10 +416,13 @@ app.get('/getInformation', function (req, res) {
 	}
 })
 
-// 以下全是路由！
+// 进行计数
 app.get("/count", function (req, res) {
 	countVisit.countVisit(req, res);
 })
+
+// 更改个人信息
+
 
 // 启动服务器，监听请求
 var server = app.listen(8888, function () {

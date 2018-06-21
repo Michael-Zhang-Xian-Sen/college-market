@@ -165,9 +165,9 @@ function clickRegist() {
                     skip();
                 } else {
                     if (msg.error == "id_exist") {
-                        $("#registModalContent .modal-footer").after("<div id=\"registError\" class=\"alert alert-danger alert-dismissible fade in\" role=\"alert\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">×</span></button><strong>注册失败！</strong>该学号已存在！</div>");
+                        $("#registModalContent .modal-footer").after("<div id=\"registError\" class=\"alert alert-danger alert-dismissible fade in\" role=\"alert\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">×</span></button><strong>注册失败！</strong>该学号已存在(,,•́ . •̀,,)</div>");
                     } else {
-                        $("#registModalContent .modal-footer").after("<div id=\"registError\" class=\"alert alert-danger alert-dismissible fade in\" role=\"alert\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">×</span></button><strong>注册失败！</strong>该姓名已存在！</div>");
+                        $("#registModalContent .modal-footer").after("<div id=\"registError\" class=\"alert alert-danger alert-dismissible fade in\" role=\"alert\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">×</span></button><strong>注册失败！</strong>该姓名已存在(,,•́ . •̀,,)</div>");
                     }
                     // 执行dom操作
                 }

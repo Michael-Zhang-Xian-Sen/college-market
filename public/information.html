@@ -37,7 +37,7 @@
                 <div class="collapse navbar-collapse" id="navbar-collapse">
                     <div class="header-ul">
                         <ul style="position: relative;" class="nav navbar-nav navbar-right">
-                            <li class="active">
+                            <li>
                                 <a href="./index.html">主页</a>
                             </li>
                             <li class="dropdown">
@@ -98,17 +98,32 @@
     <div id="user-information-box">
         <div id="user-container">
             <div id="user-profile-header">
-                <!-- <div id="user-profile-img"> -->
-                <img id="profile-img" class="profile-header-items" src="./source/img/user.gif">
-                <span id="user-profile-name" class="profile-header-items"></span>
-                <span id="user-profile-id" class="profile-header-items"></span>
+                <div id="update-gear-box">
+                    <div class="dropdown">
+                        <button id="dLabel2" class="change-background-color" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-cog fa-1x" aria-hidden="true"></i>
+                            <i class="fa fa-caret-down fa-1x" aria-hidden="true"></i>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dLabel2">
+                            <li>
+                                <a href="javascript:void(0)" data-toggle="modal" data-target="#update-information">更新个人信息</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="user-profile-img">
+                    <img id="profile-img" class="profile-header-items" src="./source/img/user.gif">
+                    <span id="user-profile-name" class="profile-header-items"></span>
+                    <span id="user-profile-id" class="profile-header-items"></span>
+                </div>
             </div>
             <div id="user-profile-details">
                 <div class="user-profile-item-box">
                     <span class="user-profile-label">个人简介</span>
                     <div class="user-profile-item">
                         <div id="user-resume-box">
-                            <span id="user-resume"><a href="javascript:void(0);" data-toggle="modal" data-target="#add-resume">登录</a></span>
+                            <span id="user-resume">
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -132,7 +147,7 @@
                         <div class="col-md-4 user-link-box">
                             <p>
                                 <span>QQ：</span>
-                                <span id="uesr-profile-qq"></span>
+                                <span id="user-profile-qq"></span>
                             </p>
                         </div>
                         <div class="col-md-4 user-link-box">
@@ -147,7 +162,7 @@
                     <span class="user-profile-label">我的地址</span>
                     <div class="user-profile-item">
                         <div id="user-address-box">
-                            <span id="user-profile-address">安悦公寓南楼1621</span>
+                            <span id="user-profile-address"></span>
                         </div>
                     </div>
                 </div>
@@ -155,7 +170,7 @@
                     <span class="user-profile-label">我的交易</span>
                     <div class="user-profile-item">
                         <div id="user-deal-box">
-                            <span id="user-profile-deal">暂无</span>
+                            <span id="user-profile-deal"></span>
                         </div>
                     </div>
                 </div>
@@ -305,30 +320,61 @@
             </div>
         </div>
     </div>
-    <!-- 添加 resume -->
-    <div class="modal fade" id="add-resume" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog" role="document">
-                <div id="resumeModalContent" class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                        <h4 class="modal-title" id="resumeModalContent">仅需填写一份表单，即可加入西邮购！</h4>
-                    </div>
-                    <div class="modal-body">
-                        <form>
-                            <div class="form-group">
-                                <label for="请输入您的简介~">Neckname</label>
-                                <input class="form-control" id="" placeholder="大侠姓甚名何？" type="text">
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button id="add-resume-button" type="button" class="btn btn-primary">( ゜- ゜)つロ成为西邮购的一名会员~</button>
-                    </div>
+    <!-- 个人信息更改 -->
+    <div class="modal fade" id="update-information" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div id="updateModalContent" class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="updateModalContent">个人信息更新</h4>
+                </div>
+                <div class="modal-body attention-body">
+                    <p class="attention">无需更新的内容请不要填写~</p>
+                    <p class="attention">若要更改名称、学号、密码等信息，请联系客服人员~</p>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="personal-resume">个人简介</label>
+                            <input class="form-control" id="personal-resume" placeholder="请说出你的故事~" type="text">
+                        </div>
+                        <div class="form-group">
+                            <label for="sex">Man or Woman</label>
+                            <p>
+                                <label class="radio-inline">
+                                    <input type="radio" name="inlineRadioOptions" id="sexManUpdate" value="Man" checked>Man
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="inlineRadioOptions" id="sexWomanUpdate" value="Woman">Woman
+                                </label>
+                            </p>
+                        </div>
+                        <div class="form-group">
+                            <label for="phoneNumberUpdate">Phone Number</label>
+                            <input type="form-control" class="form-control" id="phoneNumberUpdate" placeholder="电话号码~">
+                        </div>
+                        <div class="form-group">
+                            <label for="qqNumberUpdate">qq</label>
+                            <input type="form-control" class="form-control" id="qqNumberUpdate" placeholder="qq号码~">
+                        </div>
+                        <div class="form-group">
+                            <label for="wxNumberUpdate">微信</label>
+                            <input type="form-control" class="form-control" id="wxNumberUpdate" placeholder="微信号码~">
+                        </div>
+                        <div class="form-group">
+                            <label for="addressUpdate">地址</label>
+                            <input type="form-control" class="form-control" id="addressUpdate" placeholder="现居何处？">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button id="update-information-button" type="button" class="btn btn-primary">( ゜- ゜)つロ更新个人信息~</button>
                 </div>
             </div>
         </div>
+    </div>
 
     <script type="text/javascript" src="js/spig.js" charset="gb2312"></script>
     <div id="spig" class="spig">
