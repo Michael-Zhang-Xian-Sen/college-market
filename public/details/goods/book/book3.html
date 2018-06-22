@@ -1,24 +1,22 @@
-<!doctype html>
+<!DOCTYPE>
 <html>
 
 <head>
-    <script src="./js/global.js"></script>
+    <script src="../../../js/global.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>西邮校园购</title>
-    <!-- jquery一定要放到bootstrap之前，原因是？ -->
-    <script src="./js/jquery-3.3.1.min.js"></script>
-    <link rel="stylesheet" href="./css/bootstrap-3.3.7-dist/css/bootstrap.css">
-    <link rel="stylesheet" href="./css/index.css">
-    <link rel="stylesheet" href="./css/global.css">
-    <link rel="stylesheet" href="./css/font-awesome-4.7.0/css/font-awesome.min.css">
-    <link rel="icon" type="image/vnd.microsoft.icon" href="./source/img/title-icon.png" />
+    <link rel="stylesheet" href="../../../css/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../../../css/global.css">
+    <link rel="stylesheet" href="../../../css/goods.css">
+    <link rel="stylesheet" href="../../../css/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/vnd.microsoft.icon" href="../../../source/img/title-icon.png" />
 </head>
 
 <body>
-    <script src="./css/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
-    <script src="./js/login.js"></script>
-    <script src="./js/index.js"></script>
+    <script src="../../../js/jquery-3.3.1.min.js"></script>
+    <script src="../../../css/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <script src="../../../js/login.js"></script>
     <!-- 头部导航栏 -->
     <nav id="nav" class="navbar navbar-default" role="navigation">
         <div id="nav-container-body" class="container-fluid">
@@ -31,14 +29,14 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" href="javascript:void(0);">
-                        <img src="source/img/logo.png">
+                        <img src="../../../source/img/logo.png">
                     </a>
                 </div>
                 <div class="collapse navbar-collapse" id="navbar-collapse">
                     <div class="header-ul">
                         <ul style="position: relative;" class="nav navbar-nav navbar-right">
-                            <li class="active">
-                                <a href="javascript:void(0);">主页</a>
+                            <li>
+                                <a href="../../../index.html">主页</a>
                             </li>
                             <li class="dropdown">
                                 <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
@@ -47,22 +45,22 @@
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                                     <li>
-                                        <a href="./book.html">图书</a>
+                                        <a class="active" href="./book.html">图书</a>
                                     </li>
                                     <li>
-                                        <a href="./m-cloth.html">男装</a>
+                                        <a href="../../../m-cloth.html">男装</a>
                                     </li>
                                     <li>
-                                        <a href="./wm-cloth.html">女装</a>
+                                        <a href="../../../wm-cloth.html">女装</a>
                                     </li>
                                     <li>
-                                        <a href="./daily.html">生活用品</a>
+                                        <a href="../../../daily.html">生活用品</a>
                                     </li>
                                     <li>
-                                        <a href="./digital.html">数码电器</a>
+                                        <a href="../../../digital.html">数码电器</a>
                                     </li>
                                     <li>
-                                        <a href="./stationery.html">文体用品</a>
+                                        <a href="../../../stationery.html">文体用品</a>
                                     </li>
                                 </ul>
                             </li>
@@ -73,20 +71,21 @@
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
                                     <li>
-                                        <a href="./practice.html">实习生招聘</a>
+                                        <a href="../../../practice.html">实习生招聘</a>
                                     </li>
                                     <li>
-                                        <a href="./part-time.html">兼职招聘</a>
+                                        <a href="../../../part-time.html">兼职招聘</a>
                                     </li>
                                 </ul>
                             </li>
                             <li>
-                                <a href="./lost-thing.html">失物招领</a>
+                                <a href="../../../lost-thing.html">失物招领</a>
                             </li>
                             <li>
-                                <a href="./advertise.html">发布广告</a>
+                                <a href="../../../advertise.html">发布广告</a>
                             </li>
                             <li id="userSign" class="dropdown">
+
                             </li>
                         </ul>
                     </div>
@@ -94,166 +93,92 @@
             </div>
         </div>
     </nav>
-    <div>
 
-    </div>
-    <!-- 巨幕部分 -->
-    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-        </ol>
-
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner" role="listbox">
-            <div class="item active">
-                <img src="./source/img/banner1.png" alt="...">
-                <div class="carousel-caption">
+    <!-- 内容部分 -->
+    <div id="content">
+        <div id="content-body">
+            <!-- 面包屑导航 -->
+            <div id="content-header">
+                <div class="container">
+                    <div class="row">
+                        <div class="span6">
+                            <ul class="breadcrumb">
+                                <li>
+                                    <a href="../../../index.html">主页</a>
+                                </li>
+                                <li>
+                                    <a href="../../../book.html">图书</a>
+                                </li>
+                                <li id="breadcurmb-label" class="active">
+                                    《没有一条道路是重复的》
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="item">
-                <img src="./source/img/banner2.png" alt="...">
-                <div class="carousel-caption">
+            <!-- items -->
+            <div id="goods-detail">
+                <div id="goods-detail-img-box-box">
+                    <div id="goods-detail-img-box">
+                        <img id="goods-detail-img" src="../../../source/goods/book/life.png">
+                    </div>
+                </div>
+                <div id="goods-detail-information-box-box">
+                    <div id="goods-detail-information-box">
+                        <div id="goods-detail-information-head-box">
+                            <h3 id="goods-detail-name">《没有一条道路是重复的》</h3>
+                            <!-- <p id="goods-detail-seller-information"><span id="goods-detail-seller">Himory</span>发布于<span id="goods-detail-time">2018.6.21</span></p> -->
+                            <p id="goods-detail-seller">Himory</p>
+                            <p id="goods-detail-time-information">发布于
+                                <span id="goods-detail-time">2018.6.21</span>
+                            </p>
+                        </div>
+                        <div class="goods-detail-information-others-box">
+                            <span class="goods-detail-label">商品简介</span>
+                            <div id="goods-detail-message-box">
+                                学长要毕业了，低价甩卖。
+                            </div>
+                        </div>
+                        <div class="goods-detail-information-others-box">
+                            <span class="goods-detail-label">联系方式</span>
+                            <div class="user-profile-item row">
+                                <div class="col-md-4 user-link-box hack-link">
+                                    <p>
+                                        <span>手机</span>
+                                    </p>
+                                    <p>
+                                        <span id="user-profile-mobile">&nbsp;</span>
+                                    </p>
+                                </div>
+                                <div class="col-md-4 user-link-box hack-link">
+                                    <p>
+                                        <span>QQ</span>
+                                    </p>
+                                    <p>
+                                        <span id="uesr-profile-qq">&nbsp;</span>
+                                    </p>
+                                </div>
+                                <div class="col-md-4 user-link-box">
+                                    <p>
+                                        <span>微信</span>
+                                    </p>
+                                    <p>
+                                        <span id="user-profile-wx">&nbsp;</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="goods-detail-price-box">
+                            <span id="goods-detail-price">￥123</span>
+                            <button id="goods-buy" type="button" class="btn btn-default">BUY</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-
-
     </div>
 
-    <div id="content-body">
-        <div id="content">
-            <article class="article idle-market-box">
-                <div class="idle-market">
-                    <div class="content-item-header">
-                        <h3>闲置市场</h3>
-                        <p>线上交流，当面交易，助您快速处理闲置物品(^ρ^)/</p>
-                    </div>
-                    <div class="row idle-market-detail">
-                        <div class="col-sm-12 col-md-4 idle-detail-card">
-                            <div class="thumbnail card-item">
-                                <img class="border-img" src="./source/img/varmilo.jpg">
-                                <div class="caption">
-                                    <h3>阿米洛键盘</h3>
-                                    <p>换键盘了，需要的联系学姐~</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-md-4 idle-detail-card">
-                            <div class="thumbnail card-item">
-                                <img class="border-img" src="./source/img/kindle.jpg">
-                                <div class="caption">
-                                    <h3>Kindle Paperwhite3</h3>
-                                    <p>9.9成新 需要的联系</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-md-4 idle-detail-card"></div>
-                        <div class="col-sm-12 col-md-4 idle-detail-card">
-                            <div class="thumbnail card-item">
-                                <img class="border-img" src="./source/img/wangdao.png">
-                                <div class="caption">
-                                    <h3>2019王道计组</h3>
-                                    <p>书买多了，需要的联系学长~</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-            <article id="job-information-box" class="article">
-                <div id="job-split-img-box">
-                    <img id="job-split-img" src="source/img/j.png">
-                </div>
-                <div id="job-information">
-                    <div class="content-item-header">
-                        <h3>求职信息</h3>
-                        <p>第一时间获得招聘信息，轻松找工作ヽ(*・ω・)ﾉ</p>
-                    </div>
-                    <div class="row idle-market-detail">
-                        <div class="col-sm-12 col-md-4 idle-detail-card">
-                            <div class="thumbnail card-item">
-                                <div class="ccc-img">
-                                    <img src="./source/img/tencent.jpg">
-                                </div>
-                                <div class="caption">
-                                    <h3>腾讯</h3>
-                                    <p>众多实习岗位火热招聘中~</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-md-4 idle-detail-card">
-                            <div class="thumbnail card-item">
-                                <div class="ccc-img">
-                                    <img src="./source/img/baidu.jpg">
-                                </div>
-                                <div class="caption">
-                                    <h3>百度</h3>
-                                    <p>众多实习岗位火热招聘中~</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-md-4 idle-detail-card">
-                            <div class="thumbnail card-item">
-                                <img class="border-img" src="./source/img/ali.jpg">
-                                <div class="caption">
-                                    <h3>阿里</h3>
-                                    <p>众多实习岗位火热招聘中</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-            <article id="lost-information-box" class="article">
-                <div id="lost-split-img-box">
-                    <img id="lost-split-img" src="source/img/f.png">
-                </div>
-                <div id="lost-information">
-                    <div class="content-item-header">
-                        <h3>失物招领</h3>
-                        <p>寻找失物，找寻失主，一键发布，方便快捷(≧∇≦)/</p>
-                    </div>
-                    <div class="row idle-market-detail">
-                        <div class="col-sm-12 col-md-4 idle-detail-card">
-                            <div class="thumbnail card-item">
-                                <!-- <div class="ccc-img"> -->
-                                <img class="border-img" src="./source/img/lost-money.jpg">
-                                <!-- </div> -->
-                                <div class="caption">
-                                    <h3>谁在fzxxx丢了六十块钱~</h3>
-                                    <p>图片来源于网络</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-md-4 idle-detail-card">
-                            <div class="thumbnail card-item">
-                                <div class="ccc-img">
-                                    <img src="./source/img/card.jpg">
-                                </div>
-                                <div class="caption">
-                                    <h3>旭日苑捡到银行卡一张</h3>
-                                    <p>请联系xxx~</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-md-4 idle-detail-card">
-                            <div class="thumbnail card-item">
-                                <div class="ccc-img">
-                                    <img src="./source/img/bag.jpg">
-                                </div>
-                                <div class="caption">
-                                    <h3>谁书包掉在西区图书馆了？</h3>
-                                    <p>联系xxxx</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        </div>
-    </div>
     <!-- icp备案号部分 -->
     <footer>
         <div id="footer-content">
@@ -262,8 +187,11 @@
                     <div class="col-md-3" id="footer-about">
                         <h4>关于我们</h4>
                         <ul>
-                            <li>Front-End & Back-End：
+                            <li>Front-End：
                                 <a href="https://fighting.ewinds.pw">Himory</a>
+                            </li>
+                            <li>Back-End:
+                                <a href="javascript:void(0);">weAreYong</a>
                             </li>
                             <li>Designer:
                                 <a href="javascript:void(0);">ZYT</a>
@@ -274,6 +202,9 @@
                             <li>
                                 <a href="https://github.com/Michael-Zhang-Xian-Sen?tab=repositories">FE code</a>
                             </li>
+                            <li>
+                                <a href="https://github.com/weAreYong/CD1">BE code</a>
+                            </li>
                         </ul>
                     </div>
                     <!-- 站点信息 -->
@@ -283,7 +214,7 @@
                             <li>访问次数：
                                 <span id="visit-count"></span>
                             </li>
-                            <li>响应时间：
+                            <li>相应时间：
                                 <span id="visit-time"></span>
                             </li>
                         </ul>
@@ -292,11 +223,7 @@
                     <div class="col-md-3" id="donate">
                         <h4>捐献~</h4>
                         <p>如果我们做的网站帮助到了您，可以通过支付宝进行打赏</p>
-                        <div id="footer-alipay-img">
-                            <div id="alipay">
-                                假设这是一张支付宝的图片
-                            </div>
-                        </div>
+                        <img src="">
                     </div>
                     <!-- 微信公众号 -->
                     <div class="col-md-3" id="footer-wx">
@@ -305,7 +232,7 @@
                             <li>客服电话：15691788231</li>
                             <li>我们的微信公众号：隐匿于电流中的秘密</li>
                             <div id="footer-wx-img">
-                                <img src="source/img/wx.jpg">
+                                <img src="../../../source/img/wx.jpg">
                             </div>
                         </ul>
                     </div>
@@ -316,6 +243,7 @@
             </div>
         </div>
     </footer>
+
     <!-- Modal -->
     <div class="modal fade" id="Login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
@@ -395,7 +323,7 @@
             </div>
         </div>
     </div>
-    <script type="text/javascript" src="js/spig.js" charset="gb2312"></script>
+    <script type="text/javascript" src="../../../js/spig.js" charset="gb2312"></script>
     <div id="spig" class="spig">
         <div id="message">加载中……</div>
         <div id="mumu" class="mumu"></div>
@@ -411,7 +339,7 @@
             var hjs = document.createElement('script');
             hjs.setAttribute('id', 'hjs');
             hjs.setAttribute('src', 'https://api.lwl12.com/hitokoto/main/get?encode=json');
-            document.getElementById("hjsbox").appendChild(hjs);
+            // document.getElementById("hjsbox").appendChild(hjs);
             t = setTimeout("getkoto()", 2000);
         }
         function echokoto(result) {

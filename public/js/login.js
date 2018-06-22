@@ -168,7 +168,7 @@ function clickRegist() {
                     }
 
                     // 提示注册成功信息
-                    $("#registModalContent .modal-footer").after("<div id=\"regisError\" class=\" alert alert-warning alert-dismissible fade in\" role=\"alert\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">×</span></button><strong>注册成功！</strong>将于<span id=\"refresh-page-time\">3</span>s后跳转至当前页面！(ง •_•)ง </div>");
+                    $("#registModalContent .modal-footer").after("<div id=\"regisError\" class=\" alert alert-success alert-dismissible fade in\" role=\"alert\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">×</span></button><strong>注册成功！</strong>将于<span id=\"refresh-page-time\">3</span>s后跳转至当前页面！(ง •_•)ง </div>");
                     // 页面跳转
                     skip();
                 } else {
@@ -216,7 +216,7 @@ function checkLogin() {
 
     // 检测当前错误
     if ($("#loginId").val() == "") {
-        $("#loginModalContent .modal-footer").after("<div id=\"loginError\" class=\"alert alert-danger alert-dismissible fade in\" role=\"alert\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">×</span></button><strong>登录失败！</strong>请把你的学号告诉我(,,•́ . •̀,,)</div>")
+        $("#loginModalContent .modal-footer").after("<div id=\"loginError\" class=\"alert alert-success alert-dismissible fade in\" role=\"alert\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">×</span></button><strong>登录失败！</strong>请把你的学号告诉我(,,•́ . •̀,,)</div>")
         return 0;
     } else if ($("#loginPassword").val() == "") {
         $("#loginModalContent .modal-footer").after("<div id=\"loginError\" class=\"alert alert-danger alert-dismissible fade in\" role=\"alert\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">×</span></button><strong>登录失败！</strong>我需要你的密码才能验证你的身份(,,•́ . •̀,,)</div>")
@@ -255,7 +255,7 @@ function clickLogin() {
                     }
 
                     // 显示登录成功信息
-                    $("#loginModalContent .modal-footer").after("<div id=\"loginError\" class=\" alert alert-warning alert-dismissible fade in\" role=\"alert\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">×</span></button><strong>登录成功！</strong>将于<span id=\"refresh-page-time\">3</span>s后跳转至当前页面！(ง •_•)ง </div>");
+                    $("#loginModalContent .modal-footer").after("<div id=\"loginError\" class=\" alert alert-success alert-dismissible fade in\" role=\"alert\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">×</span></button><strong>登录成功！</strong>将于<span id=\"refresh-page-time\">3</span>s后跳转至当前页面！(ง •_•)ง </div>");
                     // 页面跳转
                     skip();
                 } else {

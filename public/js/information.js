@@ -70,6 +70,9 @@ function pendingSex() {
 
 // 更新个人信息
 function updateInformation() {
+    if ($("#upadteError").length > 0) {
+        $("#upadteError").alert("close");
+    }
     // 后台通过id确认用户，若id不正确则返回没登录
     var dataObject = {
         "resume": $("#personal-resume").val(),
@@ -95,7 +98,8 @@ function updateInformation() {
             console.log(msg.status);
             if (msg.status == "success") {
                 console.log("更改个人信息成功");
-                $("#updateModalContent .modal-footer").after("<div id=\"upadteError\" class=\" alert alert-warning alert-dismissible fade in\" role=\"alert\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">×</span></button><strong>更改成功！</strong>将于<span id=\"refresh-page-time\">3</span>s后关闭当前模态框！(ง •_•)ง </div>");
+                
+                $("#updateModalContent .modal-footer").after("<div id=\"upadteError\" class=\" alert alert-success alert-dismissible fade in\" role=\"alert\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">×</span></button><strong>更改成功！</strong>将于<span id=\"refresh-page-time\">3</span>s后关闭当前模态框！(ง •_•)ง </div>");
                 // 更改个人信息
                 console.log("msg内容为：")
                 console.dir(msg);
@@ -137,7 +141,11 @@ function closeModal(name){
             console.log(time)
             time--;
         } else {
+            if ($("#upadteError").length > 0) {
+                $("#upadteError").alert("close");
+            }
             $("#"+name).modal("hide");
+            
             clearInterval(timer);
             console.log("已执行清除")
             return true;

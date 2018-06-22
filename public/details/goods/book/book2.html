@@ -1,22 +1,22 @@
-<!doctype html>
+<!DOCTYPE>
 <html>
 
 <head>
+    <script src="../../../js/global.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>西邮校园购</title>
-    <link rel="stylesheet" href="./css/bootstrap-3.3.7-dist/css/bootstrap.css">
-    <link rel="stylesheet" href="./css/index.css">
-    <link rel="stylesheet" href="./css/global.css">
-    <link rel="stylesheet" href="./css/font-awesome.css">
-    <link rel="stylesheet" href="./css/test.css">
-    <link rel="icon" type="image/vnd.microsoft.icon" href="./source/img/title-icon.png" />
+    <link rel="stylesheet" href="../../../css/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../../../css/global.css">
+    <link rel="stylesheet" href="../../../css/goods.css">
+    <link rel="stylesheet" href="../../../css/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/vnd.microsoft.icon" href="../../../source/img/title-icon.png" />
 </head>
 
 <body>
-    <script src="./js/jquery-3.3.1.min.js"></script>
-    <script src="./css/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
-    <script src="./js/login.js"></script>
+    <script src="../../../js/jquery-3.3.1.min.js"></script>
+    <script src="../../../css/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <script src="../../../js/login.js"></script>
     <!-- 头部导航栏 -->
     <nav id="nav" class="navbar navbar-default" role="navigation">
         <div id="nav-container-body" class="container-fluid">
@@ -28,75 +28,64 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">
-                        <img src="source/img/logo.png">
+                    <a class="navbar-brand" href="javascript:void(0);">
+                        <img src="../../../source/img/logo.png">
                     </a>
                 </div>
                 <div class="collapse navbar-collapse" id="navbar-collapse">
                     <div class="header-ul">
                         <ul style="position: relative;" class="nav navbar-nav navbar-right">
-                            <li class="active">
-                                <a href="#">主页</a>
+                            <li>
+                                <a href="../../../index.html">主页</a>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
                                     闲置市场
                                     <b class="caret"></b>
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                                     <li>
-                                        <a href="./book.html">图书</a>
+                                        <a class="active" href="./book.html">图书</a>
                                     </li>
                                     <li>
-                                        <a href="./m-cloth.html">男装</a>
+                                        <a href="../../../m-cloth.html">男装</a>
                                     </li>
                                     <li>
-                                        <a href="./wm-cloth.html">女装</a>
+                                        <a href="../../../wm-cloth.html">女装</a>
                                     </li>
                                     <li>
-                                        <a href="./daily.html">生活用品</a>
+                                        <a href="../../../daily.html">生活用品</a>
                                     </li>
                                     <li>
-                                        <a href="./digital.html">数码电器</a>
+                                        <a href="../../../digital.html">数码电器</a>
                                     </li>
                                     <li>
-                                        <a href="./stationery.html">文体用品</a>
+                                        <a href="../../../stationery.html">文体用品</a>
                                     </li>
                                 </ul>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
                                     求职信息
                                     <b class="caret"></b>
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
                                     <li>
-                                        <a href="./practice.html">实习生招聘</a>
+                                        <a href="../../../practice.html">实习生招聘</a>
                                     </li>
                                     <li>
-                                        <a href="./part-time.html">兼职招聘</a>
+                                        <a href="../../../part-time.html">兼职招聘</a>
                                     </li>
                                 </ul>
                             </li>
                             <li>
-                                <a href="#">失物招领</a>
+                                <a href="../../../lost-thing.html">失物招领</a>
                             </li>
                             <li>
-                                <a href="#">关于我们</a>
+                                <a href="../../../advertise.html">发布广告</a>
                             </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    登录/注册
-                                    <b class="caret"></b>
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu5">
-                                    <li>
-                                        <a href="#" data-toggle="modal" data-target="#Login">登录</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" data-toggle="modal" data-target="#Register">注册</a>
-                                    </li>
-                                </ul>
+                            <li id="userSign" class="dropdown">
+
                             </li>
                         </ul>
                     </div>
@@ -104,27 +93,92 @@
             </div>
         </div>
     </nav>
-    <!-- 巨幕部分 -->
-    <div id="jumbotron" class="jumbotron">
 
-    </div>
-
-    <div id="content-body">
-        <div id="content">
-            <article style="background-color: aquamarine" class="article">
-                <p>「闲置市场」</p>
-                <p>对闲置市场的功能做一个介绍</p>
-                <p>ps:如果你需要加这种「横条」（我不知道专业术语是什么..）的话，直接设计就可以，我到时候再加上。</p>
-                <p>pps:这个部分的长宽也可以由你来决定</p>
-            </article>
-            <article style="background-color:bisque" class="article">
-                「求职信息」 同上
-            </article>
-            <article style="background-color: blue" class="article">
-                「失物招领」 同上。
-            </article>
+    <!-- 内容部分 -->
+    <div id="content">
+        <div id="content-body">
+            <!-- 面包屑导航 -->
+            <div id="content-header">
+                <div class="container">
+                    <div class="row">
+                        <div class="span6">
+                            <ul class="breadcrumb">
+                                <li>
+                                    <a href="../../../index.html">主页</a>
+                                </li>
+                                <li>
+                                    <a href="../../../book.html">图书</a>
+                                </li>
+                                <li id="breadcurmb-label" class="active">
+                                    《银河系漫游指南》
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- items -->
+            <div id="goods-detail">
+                <div id="goods-detail-img-box-box">
+                    <div id="goods-detail-img-box">
+                        <img id="goods-detail-img" src="../../../source/goods/book/galaxy.png">
+                    </div>
+                </div>
+                <div id="goods-detail-information-box-box">
+                    <div id="goods-detail-information-box">
+                        <div id="goods-detail-information-head-box">
+                            <h3 id="goods-detail-name">《银河系漫游指南》</h3>
+                            <!-- <p id="goods-detail-seller-information"><span id="goods-detail-seller">Himory</span>发布于<span id="goods-detail-time">2018.6.21</span></p> -->
+                            <p id="goods-detail-seller">Himory</p>
+                            <p id="goods-detail-time-information">发布于
+                                <span id="goods-detail-time">2018.6.21</span>
+                            </p>
+                        </div>
+                        <div class="goods-detail-information-others-box">
+                            <span class="goods-detail-label">商品简介</span>
+                            <div id="goods-detail-message-box">
+                                学长要毕业了，低价甩卖。
+                            </div>
+                        </div>
+                        <div class="goods-detail-information-others-box">
+                            <span class="goods-detail-label">联系方式</span>
+                            <div class="user-profile-item row">
+                                <div class="col-md-4 user-link-box hack-link">
+                                    <p>
+                                        <span>手机</span>
+                                    </p>
+                                    <p>
+                                        <span id="user-profile-mobile">&nbsp;</span>
+                                    </p>
+                                </div>
+                                <div class="col-md-4 user-link-box hack-link">
+                                    <p>
+                                        <span>QQ</span>
+                                    </p>
+                                    <p>
+                                        <span id="uesr-profile-qq">&nbsp;</span>
+                                    </p>
+                                </div>
+                                <div class="col-md-4 user-link-box">
+                                    <p>
+                                        <span>微信</span>
+                                    </p>
+                                    <p>
+                                        <span id="user-profile-wx">&nbsp;</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="goods-detail-price-box">
+                            <span id="goods-detail-price">￥123</span>
+                            <button id="goods-buy" type="button" class="btn btn-default">BUY</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+
     <!-- icp备案号部分 -->
     <footer>
         <div id="footer-content">
@@ -137,10 +191,10 @@
                                 <a href="https://fighting.ewinds.pw">Himory</a>
                             </li>
                             <li>Back-End:
-                                <a href="#">weAreYong</a>
+                                <a href="javascript:void(0);">weAreYong</a>
                             </li>
                             <li>Designer:
-                                <a href="#">ZYT</a>
+                                <a href="javascript:void(0);">ZYT</a>
                             </li>
                         </ul>
                         <h4>Follow us!</h4>
@@ -158,10 +212,10 @@
                         <h4>站点信息</h4>
                         <ul>
                             <li>访问次数：
-                                <span id="visit-count">20</span>
+                                <span id="visit-count"></span>
                             </li>
                             <li>相应时间：
-                                <span id="visit-count">0.005s</span>
+                                <span id="visit-time"></span>
                             </li>
                         </ul>
                     </div>
@@ -178,7 +232,7 @@
                             <li>客服电话：15691788231</li>
                             <li>我们的微信公众号：隐匿于电流中的秘密</li>
                             <div id="footer-wx-img">
-                                <img src="source/img/wx.jpg">
+                                <img src="../../../source/img/wx.jpg">
                             </div>
                         </ul>
                     </div>
@@ -189,6 +243,7 @@
             </div>
         </div>
     </footer>
+
     <!-- Modal -->
     <div class="modal fade" id="Login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
@@ -268,7 +323,7 @@
             </div>
         </div>
     </div>
-    <script type="text/javascript" src="js/spig.js" charset="gb2312"></script>
+    <script type="text/javascript" src="../../../js/spig.js" charset="gb2312"></script>
     <div id="spig" class="spig">
         <div id="message">加载中……</div>
         <div id="mumu" class="mumu"></div>
@@ -284,7 +339,7 @@
             var hjs = document.createElement('script');
             hjs.setAttribute('id', 'hjs');
             hjs.setAttribute('src', 'https://api.lwl12.com/hitokoto/main/get?encode=json');
-            document.getElementById("hjsbox").appendChild(hjs);
+            // document.getElementById("hjsbox").appendChild(hjs);
             t = setTimeout("getkoto()", 2000);
         }
         function echokoto(result) {
